@@ -7,3 +7,10 @@
 !README.md
 !noxfund.sol
 !LICENSE
+!SECURITY.md
+!CONTRIBUTING.md
+!CODE_OF_CONDUCT.md
+
+# Allow .github folder and its contents
+!.github/
+!.github/**
