@@ -10,6 +10,7 @@
 [![Verified](https://img.shields.io/badge/Contract-Verified-success?style=for-the-badge&logo=ethereum)](https://bscscan.com/address/0x433830E36585bdACC840E1caB419C4211bBf13f5#code)
 
 [![Website](https://img.shields.io/badge/🌐_Website-noxfund.com-blueviolet?style=for-the-badge)](https://noxfund.com)
+[![Telegram](https://img.shields.io/badge/💬_Telegram-Join_Community-blue?style=for-the-badge&logo=telegram)](https://t.me/noxfundchat)
 [![BSCScan](https://img.shields.io/badge/📊_BSCScan-Contract-yellow?style=for-the-badge)](https://bscscan.com/address/0x433830E36585bdACC840E1caB419C4211bBf13f5)
 [![Security Audit](https://img.shields.io/badge/🛡️_Audit-Passed-brightgreen?style=for-the-badge)](https://github.com/noxfund/noxfund/blob/main/audit)
 [![Solidity Scan](https://img.shields.io/badge/🔍_Solidity_Scan-Verified-blue?style=for-the-badge)](https://solidityscan.com/)
@@ -217,6 +218,7 @@ console.log("Pending ROI:", web3.utils.fromWei(pending, "ether"), "USDT");
 | Resource | URL |
 |----------|-----|
 | **Website** | [https://noxfund.com](https://noxfund.com) |
+| **Telegram Community** | [https://t.me/noxfundchat](https://t.me/noxfundchat) |
 | **Contract (BSCScan)** | [View on BSCScan](https://bscscan.com/address/0x433830E36585bdACC840E1caB419C4211bBf13f5) |
 | **Verified Source** | [BSCScan Code Tab](https://bscscan.com/address/0x433830E36585bdACC840E1caB419C4211bBf13f5#code#F7#L1) |
 | **GitHub** | [github.com/noxfund/noxfund](https://github.com/noxfund/noxfund) |
@@ -298,6 +300,7 @@ This project is licensed under the **MIT License**.
 <div align="center">
 
 [![Website](https://img.shields.io/badge/🌐_Official_Website-Visit-blueviolet?style=for-the-badge)](https://noxfund.com)
+[![Telegram](https://img.shields.io/badge/💬_Join_Telegram-Community-blue?style=for-the-badge&logo=telegram)](https://t.me/noxfundchat)
 [![BSCScan](https://img.shields.io/badge/📊_View_on_BSCScan-Explore-yellow?style=for-the-badge)](https://bscscan.com/address/0x433830E36585bdACC840E1caB419C4211bBf13f5)
 [![GitHub](https://img.shields.io/badge/💻_Source_Code-GitHub-black?style=for-the-badge&logo=github)](https://github.com/noxfund/noxfund)
 [![Audit](https://img.shields.io/badge/🛡️_Security_Audit-View-brightgreen?style=for-the-badge)](https://github.com/noxfund/noxfund/blob/main/audit)
