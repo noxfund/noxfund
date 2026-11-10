@@ -1,0 +1,19 @@
+# Code Owners for NoxFund
+# These owners will be requested for review when someone opens a PR
+
+# Default owners for everything in the repo
+* @noxfund
+
+# Smart contract (reference only - immutable on-chain)
+*.sol @noxfund
+
+# Documentation
+*.md @noxfund
+docs/ @noxfund
+
+# GitHub configuration
+.github/ @noxfund
+
+# Security-sensitive files
+SECURITY.md @noxfund
+.github/workflows/ @noxfund

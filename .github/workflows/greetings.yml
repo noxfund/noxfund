@@ -1,0 +1,43 @@
+name: Greetings 👋
+
+on: [pull_request_target, issues]
+
+jobs:
+  greeting:
+    runs-on: ubuntu-latest
+    permissions:
+      issues: write
+      pull-requests: write
+    steps:
+    - uses: actions/first-interaction@v1
+      with:
+        repo-token: ${{ secrets.GITHUB_TOKEN }}
+        issue-message: |
+          👋 **Welcome to NoxFund!** 🦊
+          
+          Thank you for opening your first issue! We appreciate your contribution to making NoxFund better.
+          
+          **What happens next?**
+          - A team member will review your issue soon
+          - Please provide any additional details if requested
+          - Join our [Telegram community](https://t.me/noxfundchat) for faster responses
+          
+          **Useful Links:**
+          - 📖 [Documentation](https://nox.fund)
+          - 🔍 [Verified Contract](https://bscscan.com/address/0x433830E36585bdACC840E1caB419C4211bBf13f5)
+          - 🛡️ [Security Audit](https://hazecrypto.net/audit/Noxfund)
+          
+          Thanks again! 🚀
+        pr-message: |
+          🎉 **Thank you for your first Pull Request!** 🦊
+          
+          We're excited to review your contribution to NoxFund!
+          
+          **Before we merge:**
+          - [ ] Please ensure all tests pass
+          - [ ] Check that your code follows our [Contributing Guidelines](CONTRIBUTING.md)
+          - [ ] Make sure the PR description is complete
+          
+          A maintainer will review your PR soon. Feel free to join our [Telegram](https://t.me/noxfundchat) if you have questions!
+          
+          Thanks for making NoxFund better! 🚀✨
