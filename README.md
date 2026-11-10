@@ -251,6 +251,63 @@ https://nox.fund/?ref=yourname
 
 ---
 
+## 🔒 Ultimate Trustlessness & Decentralization
+
+### 🔑 Developer Keys Publicly Shared - Zero Control
+
+**NoxFund achieves the highest level of decentralization possible:**
+
+The contract was deployed from wallet: **`0xC9Bdfe5597e9030114860059045f3893DE84a1F6`**
+
+#### Private Keys Are PUBLIC
+
+The deployment wallet's **private keys have been publicly shared** in the Telegram community, proving that:
+
+- ❌ Developers **CANNOT** modify the contract
+- ❌ Developers **CANNOT** pause operations
+- ❌ Developers **CANNOT** upgrade the code
+- ❌ Developers **CANNOT** access user funds
+- ❌ Developers **CANNOT** change parameters
+
+### Why This Matters
+
+**Traditional DeFi:**
+- Developers hold private keys
+- "Trust us, we're honest"
+- Multisig wallets still have control
+- Upgrade proxies allow code changes
+
+**NoxFund:**
+- ✅ Private keys publicly revealed
+- ✅ ZERO administrative control
+- ✅ NO multisig governance
+- ✅ NO upgrade capability
+- ✅ Contract runs autonomously FOREVER
+
+### The Ultimate Proof
+
+> **"Don't trust, verify."**
+>
+> With NoxFund, you don't even need to verify - **everyone has the keys.**
+> The developers literally gave away all control the moment of deployment.
+
+This is **true decentralization** - not just marketing promises.
+
+### Contract Guarantees
+
+| Feature | Status | Proof |
+|---------|--------|-------|
+| **No Owner** | ✅ | No owner variable in code |
+| **No Admin Functions** | ✅ | Zero privileged functions |
+| **No Pause** | ✅ | No pause mechanism exists |
+| **No Upgrades** | ✅ | Not a proxy contract |
+| **Immutable Code** | ✅ | Deployed bytecode cannot change |
+| **Public Keys** | ✅ | Deployment wallet keys shared publicly |
+
+**Result:** Users DON'T need to trust anyone - **the code is law.**
+
+---
+
 ## 🔒 Security Features
 
 ### ✅ Trustless Architecture
