@@ -12,8 +12,8 @@
 [![Website](https://img.shields.io/badge/🌐_Website-nox.fund-blueviolet?style=for-the-badge)](https://nox.fund)
 [![Telegram](https://img.shields.io/badge/💬_Telegram-Join_Community-blue?style=for-the-badge&logo=telegram)](https://t.me/noxfundchat)
 [![BSCScan](https://img.shields.io/badge/📊_BSCScan-Contract-yellow?style=for-the-badge)](https://bscscan.com/address/0x433830E36585bdACC840E1caB419C4211bBf13f5)
-[![Security Audit](https://img.shields.io/badge/🛡️_Audit-Passed-brightgreen?style=for-the-badge)](https://github.com/noxfund/noxfund/blob/main/audit)
-[![Solidity Scan](https://img.shields.io/badge/🔍_Solidity_Scan-Verified-blue?style=for-the-badge)](https://solidityscan.com/)
+[![Security Audit](https://img.shields.io/badge/🛡️_Audit-Passed-brightgreen?style=for-the-badge)](https://hazecrypto.net/audit/Noxfund)
+[![Solidity Scan](https://img.shields.io/badge/🔍_Solidity_Scan-Verified-blue?style=for-the-badge)](https://solidityscan.com/quickscan/0x433830E36585bdACC840E1caB419C4211bBf13f5/bscscan/mainnet)
 
 </div>
 
@@ -343,7 +343,7 @@ This is **true decentralization** - not just marketing promises.
 ### 🔍 Verification Links
 
 [![BSCScan Verified](https://img.shields.io/badge/BSCScan-Verified_Source_Code-success?style=flat-square&logo=ethereum)](https://bscscan.com/address/0x433830E36585bdACC840E1caB419C4211bBf13f5#code#F7#L1)
-[![Solidity Scan](https://img.shields.io/badge/Solidity_Scan-Analyzed-blue?style=flat-square)](https://solidityscan.com/)
+[![Solidity Scan](https://img.shields.io/badge/Solidity_Scan-Analyzed-blue?style=flat-square)](https://solidityscan.com/quickscan/0x433830E36585bdACC840E1caB419C4211bBf13f5/bscscan/mainnet)
 
 **View Contract Source:**
 - 🔗 [BSCScan Verified Code](https://bscscan.com/address/0x433830E36585bdACC840E1caB419C4211bBf13f5#code#F7#L1)
@@ -467,7 +467,9 @@ console.log("Pending ROI:", web3.utils.fromWei(pending, "ether"), "USDT");
 | **Contract (BSCScan)** | [View on BSCScan](https://bscscan.com/address/0x433830E36585bdACC840E1caB419C4211bBf13f5) |
 | **Verified Source** | [BSCScan Code Tab](https://bscscan.com/address/0x433830E36585bdACC840E1caB419C4211bBf13f5#code#F7#L1) |
 | **GitHub** | [github.com/noxfund/noxfund](https://github.com/noxfund/noxfund) |
-| **Security Audit** | [View Audit Report](https://github.com/noxfund/noxfund/blob/main/audit) |
+| **Security Audit** | [HazeCrypto Report](https://hazecrypto.net/audit/Noxfund) |
+| **SolidityScan** | [Live Analysis](https://solidityscan.com/quickscan/0x433830E36585bdACC840E1caB419C4211bBf13f5/bscscan/mainnet) |
+| **Project Overview** | [Download PDF](https://github.com/noxfund/noxfund/blob/main/NOX-FUND-Project-Overview.pdf) |
 
 ### Network Details
 
@@ -548,7 +550,7 @@ This project is licensed under the **MIT License**.
 [![Telegram](https://img.shields.io/badge/💬_Join_Telegram-Community-blue?style=for-the-badge&logo=telegram)](https://t.me/noxfundchat)
 [![BSCScan](https://img.shields.io/badge/📊_View_on_BSCScan-Explore-yellow?style=for-the-badge)](https://bscscan.com/address/0x433830E36585bdACC840E1caB419C4211bBf13f5)
 [![GitHub](https://img.shields.io/badge/💻_Source_Code-GitHub-black?style=for-the-badge&logo=github)](https://github.com/noxfund/noxfund)
-[![Audit](https://img.shields.io/badge/🛡️_Security_Audit-View-brightgreen?style=for-the-badge)](https://github.com/noxfund/noxfund/blob/main/audit)
+[![Audit](https://img.shields.io/badge/🛡️_Security_Audit-View-brightgreen?style=for-the-badge)](https://hazecrypto.net/audit/Noxfund)
 
 </div>
 
