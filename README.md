@@ -284,7 +284,7 @@ The deployment wallet's **private keys have been publicly shared** in the Telegr
 - ✅ NO upgrade capability
 - ✅ Contract runs autonomously FOREVER
 
-### The Ultimate Proof
+### The Ultimate Proof 
 
 > **"Don't trust, verify."**
 >
