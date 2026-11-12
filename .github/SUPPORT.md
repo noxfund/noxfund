@@ -1,4 +1,4 @@
-# Getting Support 🦊
+# Getting Support
 
 Thank you for using NoxFund! We're here to help.
 
@@ -86,4 +86,4 @@ Please include:
 
 ---
 
-**We're here to help make your NoxFund experience great!** 🦊✨
+**We're here to help make your NoxFund experience great!** ✨

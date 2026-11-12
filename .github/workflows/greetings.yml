@@ -13,7 +13,7 @@ jobs:
       with:
         repo-token: ${{ secrets.GITHUB_TOKEN }}
         issue-message: |
-          👋 **Welcome to NoxFund!** 🦊
+          👋 **Welcome to NoxFund!**
           
           Thank you for opening your first issue! We appreciate your contribution to making NoxFund better.
           
@@ -29,7 +29,7 @@ jobs:
           
           Thanks again! 🚀
         pr-message: |
-          🎉 **Thank you for your first Pull Request!** 🦊
+          🎉 **Thank you for your first Pull Request!**
           
           We're excited to review your contribution to NoxFund!
           

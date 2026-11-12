@@ -1,4 +1,4 @@
-# Contributing to NoxFund 🦊
+# Contributing to NoxFund
 
 Thank you for your interest in contributing to NoxFund! We welcome contributions from the community.
 
@@ -201,4 +201,4 @@ Contributors will be:
 
 ---
 
-**Thank you for contributing to NoxFund!** 🦊✨
+**Thank you for contributing to NoxFund!** ✨

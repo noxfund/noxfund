@@ -1,6 +1,6 @@
 <div align="center">
 
-# 🦊 NoxFund Smart Contract
+# NoxFund Smart Contract
 
 ### Immutable Passive Income Protocol on BNB Smart Chain
 
@@ -558,7 +558,7 @@ This project is licensed under the **MIT License**.
 
 <div align="center">
 
-### Built with 🦊 by the NoxFund Team
+### Built with by the NoxFund Team
 
 **Completely Trustless • Fully Immutable • Perpetually Operational**
 

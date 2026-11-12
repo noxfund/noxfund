@@ -74,4 +74,4 @@ Check your deployments at:
 
 ---
 
-**Your GitHub Pages site is live!** 🦊✨
+**Your GitHub Pages site is live!** ✨

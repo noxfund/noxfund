@@ -62,4 +62,4 @@ While the smart contract itself is immutable and cannot be changed, we appreciat
 
 ---
 
-**Thank you for helping keep NoxFund safe!** 🦊
+**Thank you for helping keep NoxFund safe!**

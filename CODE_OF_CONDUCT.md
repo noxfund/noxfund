@@ -130,4 +130,4 @@ https://www.contributor-covenant.org/translations.
 
 ---
 
-**NoxFund Community** 🦊 | Building a respectful and inclusive DeFi ecosystem
+**NoxFund Community** | Building a respectful and inclusive DeFi ecosystem

@@ -90,6 +90,6 @@ Your repository now has:
 
 ---
 
-**Your NoxFund repository is now professional, welcoming, and ready to attract contributors!** 🦊✨
+**Your NoxFund repository is now professional, welcoming, and ready to attract contributors!** ✨
 
 Need help? Check [`SUPPORT.md`](SUPPORT.md) or join our [Telegram](https://t.me/noxfundchat)!

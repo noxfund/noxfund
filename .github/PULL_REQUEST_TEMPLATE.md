@@ -55,4 +55,4 @@ Fixes #(issue number)
 
 ---
 
-**Thank you for contributing to NoxFund!** 🦊✨
+**Thank you for contributing to NoxFund!** ✨
