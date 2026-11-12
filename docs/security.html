@@ -1,0 +1,502 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="nox">
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
+    <title>Security Best Practices | NOX FUND - Protect Your Funds</title>
+    
+    <meta name="description" content="Essential security practices for NOX FUND users. Learn how to protect your wallet, avoid scams, and safely participate in DeFi." />
+    
+    <link rel="icon" href="../assets/img/favicon.svg" type="image/svg+xml" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=Inter:wght@400;500;600&display=swap" rel="stylesheet" />
+    
+    <style>
+        :root {
+            --primary: #667eea;
+            --primary-dark: #764ba2;
+            --bg-dark: #07030f;
+            --bg-card: #1a0a2e;
+            --text: #ffffff;
+            --text-muted: #a0a0a0;
+            --border: #2d1b4e;
+            --danger: #ef4444;
+            --warning: #f59e0b;
+            --success: #10b981;
+        }
+        
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+            background: linear-gradient(135deg, var(--bg-dark) 0%, #1a0a2e 100%);
+            color: var(--text);
+            line-height: 1.7;
+        }
+        
+        .container {
+            max-width: 900px;
+            margin: 0 auto;
+            padding: 40px 20px 80px;
+        }
+        
+        .nav-back {
+            display: inline-block;
+            margin-bottom: 24px;
+            padding: 8px 16px;
+            background: rgba(102, 126, 234, 0.1);
+            border: 1px solid var(--border);
+            border-radius: 8px;
+            color: var(--text);
+            text-decoration: none;
+            font-size: 14px;
+            transition: all 0.3s;
+        }
+        
+        .nav-back:hover {
+            background: rgba(102, 126, 234, 0.2);
+            border-color: var(--primary);
+        }
+        
+        .header {
+            text-align: center;
+            margin-bottom: 48px;
+        }
+        
+        .icon {
+            font-size: 64px;
+            margin-bottom: 16px;
+        }
+        
+        h1 {
+            font-family: 'Space Grotesk', sans-serif;
+            font-size: 42px;
+            font-weight: 700;
+            margin-bottom: 16px;
+            background: linear-gradient(135deg, var(--primary) 0%, var(--primary-dark) 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+        
+        .subtitle {
+            font-size: 18px;
+            color: var(--text-muted);
+        }
+        
+        h2 {
+            font-family: 'Space Grotesk', sans-serif;
+            font-size: 28px;
+            font-weight: 700;
+            margin: 48px 0 24px;
+            padding-bottom: 12px;
+            border-bottom: 2px solid var(--border);
+        }
+        
+        h3 {
+            font-family: 'Space Grotesk', sans-serif;
+            font-size: 22px;
+            font-weight: 600;
+            margin: 32px 0 16px;
+        }
+        
+        p {
+            margin-bottom: 16px;
+            font-size: 16px;
+        }
+        
+        ul, ol {
+            margin: 16px 0 16px 24px;
+        }
+        
+        li {
+            margin-bottom: 8px;
+        }
+        
+        .danger-box {
+            background: rgba(239, 68, 68, 0.1);
+            border-left: 4px solid var(--danger);
+            padding: 20px 24px;
+            border-radius: 8px;
+            margin: 24px 0;
+        }
+        
+        .warning-box {
+            background: rgba(245, 158, 11, 0.1);
+            border-left: 4px solid var(--warning);
+            padding: 20px 24px;
+            border-radius: 8px;
+            margin: 24px 0;
+        }
+        
+        .success-box {
+            background: rgba(16, 185, 129, 0.1);
+            border-left: 4px solid var(--success);
+            padding: 20px 24px;
+            border-radius: 8px;
+            margin: 24px 0;
+        }
+        
+        .security-card {
+            background: var(--bg-card);
+            border: 1px solid var(--border);
+            border-radius: 12px;
+            padding: 24px;
+            margin: 20px 0;
+        }
+        
+        .threat-level {
+            display: inline-block;
+            padding: 4px 12px;
+            border-radius: 12px;
+            font-size: 12px;
+            font-weight: 600;
+            margin-bottom: 12px;
+        }
+        
+        .threat-critical {
+            background: rgba(239, 68, 68, 0.2);
+            color: var(--danger);
+        }
+        
+        .threat-high {
+            background: rgba(245, 158, 11, 0.2);
+            color: var(--warning);
+        }
+        
+        .checklist {
+            list-style: none;
+            margin: 16px 0;
+        }
+        
+        .checklist li {
+            padding: 8px 0 8px 32px;
+            position: relative;
+        }
+        
+        .checklist li::before {
+            content: "✓";
+            position: absolute;
+            left: 8px;
+            color: var(--success);
+            font-weight: 700;
+        }
+        
+        code {
+            background: var(--bg-dark);
+            padding: 2px 6px;
+            border-radius: 4px;
+            font-family: monospace;
+            font-size: 14px;
+            color: #a78bfa;
+        }
+        
+        .comparison-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 20px;
+            margin: 24px 0;
+        }
+        
+        @media (max-width: 768px) {
+            h1 {
+                font-size: 32px;
+            }
+            
+            .comparison-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <a href="index.html" class="nav-back">← Back to Docs</a>
+        
+        <div class="header">
+            <div class="icon">🔒</div>
+            <h1>Security Best Practices</h1>
+            <p class="subtitle">Protect your funds and stay safe in DeFi</p>
+        </div>
+        
+        <div class="danger-box">
+            <strong>🚨 Critical Security Rule:</strong><br>
+            If someone asks for your seed phrase or private key, they are trying to scam you. NEVER share these with anyone, including NOX FUND "support" or "admins." There are no admins—the protocol is ownerless.
+        </div>
+        
+        <h2>🛡️ Wallet Security</h2>
+        
+        <h3>1. Seed Phrase Protection</h3>
+        <p>Your 12-word seed phrase is the master key to your wallet. If someone has it, they own everything in your wallet.</p>
+        
+        <div class="security-card">
+            <span class="threat-level threat-critical">CRITICAL</span>
+            <h4 style="margin-bottom: 12px;">Best Practices:</h4>
+            <ul class="checklist">
+                <li>Write it on paper, never store digitally</li>
+                <li>Keep multiple copies in secure locations</li>
+                <li>Never take photos of it</li>
+                <li>Don't share it with anyone, ever</li>
+                <li>Consider using a metal backup for fire protection</li>
+                <li>Test your backup by restoring wallet in test environment</li>
+            </ul>
+        </div>
+        
+        <h3>2. Use Hardware Wallets for Large Amounts</h3>
+        <p>If you're holding significant value, consider a hardware wallet:</p>
+        
+        <ul>
+            <li><strong>Ledger Nano X/S Plus:</strong> Popular and user-friendly</li>
+            <li><strong>Trezor Model T:</strong> Open-source option</li>
+            <li><strong>Benefits:</strong> Private keys never leave device, resistant to malware</li>
+        </ul>
+        
+        <h3>3. Enable Security Features</h3>
+        <ul>
+            <li>Use strong, unique password for wallet</li>
+            <li>Enable biometric authentication if available</li>
+            <li>Use password manager for secure storage</li>
+            <li>Enable 2FA where possible</li>
+        </ul>
+        
+        <h2>🎣 Common Scams & How to Avoid Them</h2>
+        
+        <div class="security-card">
+            <span class="threat-level threat-critical">CRITICAL</span>
+            <h4>1. Phishing Websites</h4>
+            <p><strong>Attack:</strong> Fake websites designed to steal your wallet info</p>
+            <p><strong>Prevention:</strong></p>
+            <ul>
+                <li>Bookmark the real <code>nox.fund</code> URL</li>
+                <li>Always check URL before connecting wallet</li>
+                <li>Look for HTTPS and SSL certificate</li>
+                <li>Be wary of links in Telegram/Discord</li>
+                <li>Google may show fake ads—skip them</li>
+            </ul>
+        </div>
+        
+        <div class="security-card">
+            <span class="threat-level threat-critical">CRITICAL</span>
+            <h4>2. Fake Support Scams</h4>
+            <p><strong>Attack:</strong> Someone impersonating admin/support asking for seed phrase</p>
+            <p><strong>Prevention:</strong></p>
+            <ul>
+                <li>NOX FUND has NO admins or support staff</li>
+                <li>Never respond to DMs offering "help"</li>
+                <li>Real community members help in public channels only</li>
+                <li>Block and report anyone asking for private keys</li>
+            </ul>
+        </div>
+        
+        <div class="security-card">
+            <span class="threat-level threat-high">HIGH</span>
+            <h4>3. Approval Scams</h4>
+            <p><strong>Attack:</strong> Malicious contracts requesting unlimited token approval</p>
+            <p><strong>Prevention:</strong></p>
+            <ul>
+                <li>Only approve exact amounts needed</li>
+                <li>Verify contract address on BSCScan</li>
+                <li>Revoke approvals after use (use revoke.cash)</li>
+                <li>Never sign transactions you don't understand</li>
+            </ul>
+        </div>
+        
+        <div class="security-card">
+            <span class="threat-level threat-high">HIGH</span>
+            <h4>4. Airdrop Scams</h4>
+            <p><strong>Attack:</strong> Unknown tokens sent to your wallet with instructions to claim</p>
+            <p><strong>Prevention:</strong></p>
+            <ul>
+                <li>Never interact with unknown tokens</li>
+                <li>Don't visit links from random airdrops</li>
+                <li>These tokens are worthless and dangerous</li>
+                <li>Simply ignore them in your wallet</li>
+            </ul>
+        </div>
+        
+        <h2>✅ Transaction Safety Checklist</h2>
+        
+        <p>Before confirming ANY transaction:</p>
+        
+        <ul class="checklist">
+            <li>Verify you're on the correct website</li>
+            <li>Check the contract address matches official</li>
+            <li>Ensure you're on BNB Smart Chain (Chain ID: 56)</li>
+            <li>Review transaction details in wallet popup</li>
+            <li>Verify amounts and recipient addresses</li>
+            <li>Start with small test transaction if unsure</li>
+        </ul>
+        
+        <h2>🔐 Official NOX FUND Resources</h2>
+        
+        <div class="success-box">
+            <strong>Bookmark these official links ONLY:</strong>
+            <ul style="margin: 12px 0 0 20px;">
+                <li><strong>Website:</strong> nox.fund</li>
+                <li><strong>Contract:</strong> 0x433830E36585bdACC840E1caB419C4211bBf13f5</li>
+                <li><strong>BSCScan:</strong> bscscan.com/address/[contract-address]</li>
+                <li><strong>Telegram:</strong> t.me/noxfundchat</li>
+                <li><strong>Audit:</strong> hazecrypto.net/audit/Noxfund</li>
+            </ul>
+        </div>
+        
+        <h2>🚫 Red Flags - Immediate Warning Signs</h2>
+        
+        <div class="comparison-grid">
+            <div class="security-card" style="border-color: var(--danger);">
+                <h4 style="color: var(--danger);">🚨 SCAM INDICATORS</h4>
+                <ul>
+                    <li>Asking for seed phrase</li>
+                    <li>Promising guaranteed returns</li>
+                    <li>Pressure to act immediately</li>
+                    <li>Unsolicited DMs</li>
+                    <li>Too-good-to-be-true offers</li>
+                    <li>Spelling errors in URLs</li>
+                    <li>Requests to install software</li>
+                </ul>
+            </div>
+            
+            <div class="security-card" style="border-color: var(--success);">
+                <h4 style="color: var(--success);">✅ LEGITIMATE BEHAVIOR</h4>
+                <ul>
+                    <li>Transparent documentation</li>
+                    <li>Open-source code</li>
+                    <li>Public community channels</li>
+                    <li>Clear risk disclosures</li>
+                    <li>Verified smart contracts</li>
+                    <li>No private support DMs</li>
+                    <li>Educational resources</li>
+                </ul>
+            </div>
+        </div>
+        
+        <h2>💻 Device & Browser Security</h2>
+        
+        <h3>Computer Security</h3>
+        <ul>
+            <li>Keep operating system updated</li>
+            <li>Use reputable antivirus software</li>
+            <li>Don't use public/shared computers for crypto</li>
+            <li>Enable firewall protection</li>
+            <li>Be cautious with browser extensions</li>
+        </ul>
+        
+        <h3>Mobile Security</h3>
+        <ul>
+            <li>Only download wallets from official stores</li>
+            <li>Keep your phone OS updated</li>
+            <li>Use screen lock with PIN/biometric</li>
+            <li>Avoid rooted/jailbroken devices</li>
+            <li>Don't install untrusted apps</li>
+        </ul>
+        
+        <h3>Network Security</h3>
+        <ul>
+            <li>Avoid public WiFi for transactions</li>
+            <li>Use VPN for additional privacy</li>
+            <li>Secure your home router</li>
+            <li>Use HTTPS everywhere</li>
+        </ul>
+        
+        <h2>📱 Telegram/Discord Safety</h2>
+        
+        <div class="warning-box">
+            <strong>⚠️ Community Channel Safety:</strong>
+            <ul style="margin: 12px 0 0 20px;">
+                <li>Admins will NEVER DM you first</li>
+                <li>Disable DMs from non-contacts</li>
+                <li>Report and block scammers immediately</li>
+                <li>Verify usernames carefully (check for impersonators)</li>
+                <li>Don't click suspicious links</li>
+                <li>All official announcements are in public channels</li>
+            </ul>
+        </div>
+        
+        <h2>🔍 How to Verify Smart Contracts</h2>
+        
+        <ol>
+            <li>Go to BSCScan: <code>bscscan.com</code></li>
+            <li>Search contract address: <code>0x433830E36585bdACC840E1caB419C4211bBf13f5</code></li>
+            <li>Look for green checkmark (verified source code)</li>
+            <li>Review "Contract" tab to see source code</li>
+            <li>Check "Read Contract" for contract parameters</li>
+            <li>Verify no owner/admin functions exist</li>
+        </ol>
+        
+        <h2>💰 Risk Management</h2>
+        
+        <h3>Investment Safety</h3>
+        <ul>
+            <li><strong>Start Small:</strong> Test with minimum amount first</li>
+            <li><strong>Diversify:</strong> Don't put all funds in one protocol</li>
+            <li><strong>Only Risk What You Can Lose:</strong> Never invest emergency funds</li>
+            <li><strong>Take Profits:</strong> Periodically withdraw earnings</li>
+            <li><strong>Stay Informed:</strong> Monitor protocol health</li>
+        </ul>
+        
+        <h3>Exit Strategy</h3>
+        <ul>
+            <li>Set profit targets and stick to them</li>
+            <li>Plan withdrawal schedule in advance</li>
+            <li>Keep some funds liquid for emergencies</li>
+            <li>Don't get emotionally attached to investments</li>
+        </ul>
+        
+        <h2>🆘 What to Do If Compromised</h2>
+        
+        <div class="danger-box">
+            <strong>If your wallet is compromised:</strong>
+            <ol style="margin: 12px 0 0 20px;">
+                <li><strong>Act Immediately:</strong> Every second counts</li>
+                <li><strong>Transfer Assets:</strong> Move funds to new clean wallet</li>
+                <li><strong>Create New Wallet:</strong> With new seed phrase</li>
+                <li><strong>Revoke Approvals:</strong> Use revoke.cash on old wallet</li>
+                <li><strong>Never Reuse:</strong> Abandon compromised wallet permanently</li>
+                <li><strong>Learn:</strong> Identify how breach occurred</li>
+            </ol>
+        </div>
+        
+        <h2>📚 Security Resources</h2>
+        
+        <ul>
+            <li><strong>Revoke Approvals:</strong> revoke.cash</li>
+            <li><strong>Check Approvals:</strong> bscscan.com/tokenapprovalchecker</li>
+            <li><strong>Wallet Security:</strong> metamask.io/security</li>
+            <li><strong>Scam Database:</strong> cryptoscamdb.org</li>
+        </ul>
+        
+        <h2>✅ Security Checklist Summary</h2>
+        
+        <ul class="checklist">
+            <li>Seed phrase written and stored securely offline</li>
+            <li>Strong, unique passwords used</li>
+            <li>Official NOX FUND URL bookmarked</li>
+            <li>2FA enabled where available</li>
+            <li>DMs from strangers ignored/blocked</li>
+            <li>Transactions always reviewed before signing</li>
+            <li>Only using official contract address</li>
+            <li>Device and browser up to date</li>
+            <li>Antivirus/security software installed</li>
+            <li>Risk management strategy in place</li>
+        </ul>
+        
+        <div class="success-box" style="margin-top: 48px;">
+            <strong>🛡️ Stay Safe!</strong> Following these security practices will protect you from 99% of crypto scams and attacks. Always trust your instincts—if something feels off, it probably is.
+        </div>
+        
+        <div style="background: linear-gradient(135deg, rgba(102, 126, 234, 0.1) 0%, rgba(118, 75, 162, 0.1) 100%); border: 1px solid var(--border); border-left: 4px solid var(--primary); padding: 24px; border-radius: 8px; margin-top: 32px;">
+            <strong>📚 Learn More:</strong>
+            <ul style="margin: 12px 0 0 20px;">
+                <li><a href="getting-started.html" style="color: var(--primary);">Getting Started Guide</a></li>
+                <li><a href="faq.html" style="color: var(--primary);">Frequently Asked Questions</a></li>
+                <li><a href="whitepaper.html" style="color: var(--primary);">Technical Whitepaper</a></li>
+            </ul>
+        </div>
+    </div>
+</body>
+</html>

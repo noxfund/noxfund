@@ -1,0 +1,790 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="nox">
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
+    <title>Whitepaper | NOX FUND — Technical Documentation</title>
+    
+    <meta name="description" content="NOX FUND technical whitepaper: immutable passive income protocol on BNB Chain. Trustless smart contract architecture, economic model, and security guarantees." />
+    <meta name="keywords" content="NOX FUND whitepaper, DeFi protocol, smart contract architecture, trustless protocol, BNB Chain, USDT yield" />
+    
+    <link rel="icon" href="../assets/img/favicon.svg" type="image/svg+xml" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=Inter:wght@400;500;600&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet" />
+    
+    <style>
+        :root {
+            --primary: #667eea;
+            --primary-dark: #764ba2;
+            --bg-dark: #07030f;
+            --bg-card: #1a0a2e;
+            --text: #ffffff;
+            --text-muted: #a0a0a0;
+            --border: #2d1b4e;
+            --success: #10b981;
+            --warning: #f59e0b;
+            --code-bg: #0d0520;
+        }
+        
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+            background: linear-gradient(135deg, var(--bg-dark) 0%, #1a0a2e 100%);
+            color: var(--text);
+            line-height: 1.7;
+        }
+        
+        .container {
+            max-width: 900px;
+            margin: 0 auto;
+            padding: 40px 20px 80px;
+        }
+        
+        .header {
+            text-align: center;
+            margin-bottom: 48px;
+            padding-bottom: 32px;
+            border-bottom: 1px solid var(--border);
+        }
+        
+        .logo {
+            font-family: 'Space Grotesk', sans-serif;
+            font-size: 42px;
+            font-weight: 700;
+            background: linear-gradient(135deg, var(--primary) 0%, var(--primary-dark) 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+            margin-bottom: 16px;
+        }
+        
+        .subtitle {
+            font-size: 18px;
+            color: var(--text-muted);
+            margin-bottom: 24px;
+        }
+        
+        .meta {
+            display: flex;
+            gap: 24px;
+            justify-content: center;
+            flex-wrap: wrap;
+            font-size: 14px;
+            color: var(--text-muted);
+        }
+        
+        .meta-item {
+            display: flex;
+            align-items: center;
+            gap: 6px;
+        }
+        
+        .nav-back {
+            display: inline-block;
+            margin-bottom: 24px;
+            padding: 8px 16px;
+            background: rgba(102, 126, 234, 0.1);
+            border: 1px solid var(--border);
+            border-radius: 8px;
+            color: var(--text);
+            text-decoration: none;
+            font-size: 14px;
+            transition: all 0.3s;
+        }
+        
+        .nav-back:hover {
+            background: rgba(102, 126, 234, 0.2);
+            border-color: var(--primary);
+        }
+        
+        h1 {
+            font-family: 'Space Grotesk', sans-serif;
+            font-size: 36px;
+            font-weight: 700;
+            margin-bottom: 24px;
+            line-height: 1.3;
+        }
+        
+        h2 {
+            font-family: 'Space Grotesk', sans-serif;
+            font-size: 28px;
+            font-weight: 700;
+            margin: 48px 0 24px;
+            padding-bottom: 12px;
+            border-bottom: 2px solid var(--border);
+        }
+        
+        h3 {
+            font-family: 'Space Grotesk', sans-serif;
+            font-size: 22px;
+            font-weight: 600;
+            margin: 32px 0 16px;
+        }
+        
+        h4 {
+            font-size: 18px;
+            font-weight: 600;
+            margin: 24px 0 12px;
+            color: var(--primary);
+        }
+        
+        p {
+            margin-bottom: 16px;
+            font-size: 16px;
+        }
+        
+        .highlight-box {
+            background: linear-gradient(135deg, rgba(102, 126, 234, 0.1) 0%, rgba(118, 75, 162, 0.1) 100%);
+            border: 1px solid var(--border);
+            border-left: 4px solid var(--primary);
+            padding: 24px;
+            border-radius: 8px;
+            margin: 24px 0;
+        }
+        
+        .stats-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 16px;
+            margin: 24px 0;
+        }
+        
+        .stat-card {
+            background: var(--bg-card);
+            border: 1px solid var(--border);
+            padding: 20px;
+            border-radius: 12px;
+            text-align: center;
+        }
+        
+        .stat-label {
+            font-size: 13px;
+            color: var(--text-muted);
+            margin-bottom: 8px;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+        }
+        
+        .stat-value {
+            font-family: 'Space Grotesk', sans-serif;
+            font-size: 28px;
+            font-weight: 700;
+            color: var(--primary);
+        }
+        
+        ul, ol {
+            margin: 16px 0 16px 24px;
+        }
+        
+        li {
+            margin-bottom: 8px;
+        }
+        
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin: 24px 0;
+            background: var(--bg-card);
+            border-radius: 8px;
+            overflow: hidden;
+        }
+        
+        thead {
+            background: rgba(102, 126, 234, 0.1);
+        }
+        
+        th, td {
+            padding: 12px 16px;
+            text-align: left;
+            border-bottom: 1px solid var(--border);
+        }
+        
+        th {
+            font-weight: 600;
+            color: var(--primary);
+        }
+        
+        tr:last-child td {
+            border-bottom: none;
+        }
+        
+        code {
+            font-family: 'JetBrains Mono', monospace;
+            background: var(--code-bg);
+            padding: 2px 6px;
+            border-radius: 4px;
+            font-size: 14px;
+            color: #a78bfa;
+        }
+        
+        pre {
+            background: var(--code-bg);
+            border: 1px solid var(--border);
+            border-radius: 8px;
+            padding: 16px;
+            overflow-x: auto;
+            margin: 16px 0;
+        }
+        
+        pre code {
+            background: none;
+            padding: 0;
+        }
+        
+        .badge {
+            display: inline-block;
+            padding: 4px 12px;
+            background: rgba(16, 185, 129, 0.2);
+            border-radius: 12px;
+            font-size: 12px;
+            font-weight: 600;
+            color: var(--success);
+            margin-left: 8px;
+        }
+        
+        .badge-warning {
+            background: rgba(245, 158, 11, 0.2);
+            color: var(--warning);
+        }
+        
+        .toc {
+            background: var(--bg-card);
+            border: 1px solid var(--border);
+            border-radius: 12px;
+            padding: 24px;
+            margin: 32px 0;
+        }
+        
+        .toc h3 {
+            margin-top: 0;
+            margin-bottom: 16px;
+        }
+        
+        .toc ul {
+            list-style: none;
+            margin: 0;
+        }
+        
+        .toc li {
+            margin-bottom: 8px;
+        }
+        
+        .toc a {
+            color: var(--text);
+            text-decoration: none;
+            transition: color 0.3s;
+        }
+        
+        .toc a:hover {
+            color: var(--primary);
+        }
+        
+        @media (max-width: 768px) {
+            .logo {
+                font-size: 32px;
+            }
+            
+            h1 {
+                font-size: 28px;
+            }
+            
+            h2 {
+                font-size: 24px;
+            }
+            
+            .stats-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <a href="index.html" class="nav-back">← Back to Docs</a>
+        
+        <div class="header">
+            <div class="logo">NOX FUND</div>
+            <div class="subtitle">Technical Whitepaper v1.0</div>
+            <div class="meta">
+                <span class="meta-item">📅 November 2026</span>
+                <span class="meta-item">📝 Version 1.0</span>
+                <span class="meta-item">🔒 Audited by HazeCrypto</span>
+            </div>
+        </div>
+        
+        <h1>Immutable Passive Income Protocol</h1>
+        
+        <p>NOX FUND is a completely trustless, ownerless passive income protocol deployed on BNB Smart Chain. The protocol offers 1.5% daily returns on USDT deposits through an immutable smart contract with no admin keys, no upgrades, and no centralized control.</p>
+        
+        <div class="highlight-box">
+            <strong>🎯 Core Mission:</strong> Provide sustainable passive income through transparent, immutable smart contract logic where users maintain complete control over their funds.
+        </div>
+        
+        <!-- Table of Contents -->
+        <div class="toc" id="toc">
+            <h3>📑 Table of Contents</h3>
+            <ul>
+                <li><a href="#overview">1. Protocol Overview</a></li>
+                <li><a href="#architecture">2. Technical Architecture</a></li>
+                <li><a href="#economic-model">3. Economic Model</a></li>
+                <li><a href="#referral-system">4. Referral System</a></li>
+                <li><a href="#security">5. Security & Trustlessness</a></li>
+                <li><a href="#smart-contract">6. Smart Contract Details</a></li>
+                <li><a href="#tokenomics">7. Tokenomics & Sustainability</a></li>
+                <li><a href="#conclusion">8. Conclusion</a></li>
+            </ul>
+        </div>
+        
+        <!-- 1. Overview -->
+        <h2 id="overview">1. Protocol Overview</h2>
+        
+        <h3>1.1 What is NOX FUND?</h3>
+        <p>NOX FUND is a DeFi protocol that accepts USDT deposits and pays 1.5% daily returns. Unlike traditional platforms, NOX FUND is:</p>
+        
+        <ul>
+            <li><strong>Trustless</strong> — No admin, owner, or privileged roles</li>
+            <li><strong>Immutable</strong> — Cannot be upgraded, paused, or modified</li>
+            <li><strong>Transparent</strong> — All logic is open source and verified on BSCScan</li>
+            <li><strong>Non-custodial</strong> — Users control withdrawals via pull payments</li>
+        </ul>
+        
+        <h3>1.2 Key Statistics</h3>
+        <div class="stats-grid">
+            <div class="stat-card">
+                <div class="stat-label">Daily ROI</div>
+                <div class="stat-value">1.5%</div>
+            </div>
+            <div class="stat-card">
+                <div class="stat-label">Capital Lock</div>
+                <div class="stat-value">45 Days</div>
+            </div>
+            <div class="stat-card">
+                <div class="stat-label">Max ROI</div>
+                <div class="stat-value">547.5%</div>
+            </div>
+            <div class="stat-card">
+                <div class="stat-label">Referral Rate</div>
+                <div class="stat-value">20%</div>
+            </div>
+        </div>
+        
+        <h3>1.3 Contract Address</h3>
+        <pre><code>0x433830E36585bdACC840E1caB419C4211bBf13f5</code></pre>
+        <p><strong>Network:</strong> BNB Smart Chain (Mainnet)<br>
+        <strong>Token:</strong> USDT (0x55d398326f99059fF775485246999027B3197955)<br>
+        <strong>Verified Source:</strong> <a href="https://bscscan.com/address/0x433830E36585bdACC840E1caB419C4211bBf13f5#code" style="color: var(--primary);">BSCScan</a><br>
+        <strong>Audit Report:</strong> <a href="https://hazecrypto.net/audit/Noxfund" style="color: var(--primary);">HazeCrypto</a></p>
+        
+        <!-- 2. Architecture -->
+        <h2 id="architecture">2. Technical Architecture</h2>
+        
+        <h3>2.1 Smart Contract Design</h3>
+        <p>The protocol is built on a single, non-upgradeable smart contract using Solidity ^0.8.24. Key architectural principles:</p>
+        
+        <ul>
+            <li><strong>No Proxy Pattern:</strong> Direct implementation, no delegatecall vulnerabilities</li>
+            <li><strong>Immutable Constants:</strong> All economic parameters are compile-time constants</li>
+            <li><strong>Pull Payment Pattern:</strong> Users initiate all withdrawals (prevents forced transfers)</li>
+            <li><strong>ReentrancyGuard:</strong> Protection against reentrancy attacks</li>
+            <li><strong>SafeERC20:</strong> Safe token transfer operations</li>
+        </ul>
+        
+        <h3>2.2 Data Structures</h3>
+        
+        <h4>Deposit Structure</h4>
+        <pre><code>struct Deposit {
+    uint128 principal;           // Original deposit amount
+    uint64  startTime;           // Deposit timestamp
+    uint64  lastClaimTime;       // Last ROI claim time
+    uint32  totalROIDaysClaimed; // Days claimed (max 365)
+    uint128 preservedROI;        // ROI preserved on early withdrawal
+}</code></pre>
+        
+        <h4>Key Mappings</h4>
+        <ul>
+            <li><code>deposits[address]</code> — Array of all user deposits</li>
+            <li><code>referrer[address]</code> — User's upline (locked after first deposit)</li>
+            <li><code>refBalance[address]</code> — Pending referral commissions</li>
+            <li><code>totalDeposited[address]</code> — Lifetime deposits per user</li>
+        </ul>
+        
+        <!-- 3. Economic Model -->
+        <h2 id="economic-model">3. Economic Model</h2>
+        
+        <h3>3.1 Daily ROI System</h3>
+        <p>Users earn <strong>1.5% daily</strong> on their full deposit amount:</p>
+        
+        <table>
+            <thead>
+                <tr>
+                    <th>Deposit Amount</th>
+                    <th>Daily ROI</th>
+                    <th>Weekly ROI</th>
+                    <th>Monthly ROI</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>100 USDT</td>
+                    <td>1.5 USDT</td>
+                    <td>10.5 USDT</td>
+                    <td>45 USDT</td>
+                </tr>
+                <tr>
+                    <td>1,000 USDT</td>
+                    <td>15 USDT</td>
+                    <td>105 USDT</td>
+                    <td>450 USDT</td>
+                </tr>
+                <tr>
+                    <td>10,000 USDT</td>
+                    <td>150 USDT</td>
+                    <td>1,050 USDT</td>
+                    <td>4,500 USDT</td>
+                </tr>
+            </tbody>
+        </table>
+        
+        <h3>3.2 Capital Lock Mechanism</h3>
+        <p>Principal is locked for <strong>45 days</strong> from the deposit timestamp. This creates a rolling compound opportunity:</p>
+        
+        <ul>
+            <li><strong>Days 1-45:</strong> Earn daily ROI, reinvest for compounding</li>
+            <li><strong>Day 46+:</strong> Original principal unlocks, new deposits still earning</li>
+            <li><strong>Strategy:</strong> Daily reinvestment creates staggered unlock schedule</li>
+        </ul>
+        
+        <h3>3.3 Maximum ROI Cap</h3>
+        <p>Each deposit can accumulate ROI for a maximum of <strong>365 days</strong>, resulting in:</p>
+        
+        <div class="highlight-box">
+            <strong>Maximum ROI per deposit:</strong> 1.5% × 365 days = <strong>547.5%</strong><br>
+            After reaching this cap, the deposit stops accruing ROI but principal remains withdrawable.
+        </div>
+        
+        <h3>3.4 Fee Structure</h3>
+        
+        <table>
+            <thead>
+                <tr>
+                    <th>Fee Type</th>
+                    <th>Rate</th>
+                    <th>Notes</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>Deposit Fee</td>
+                    <td>5%</td>
+                    <td>Paid by pool, not deducted from user deposit</td>
+                </tr>
+                <tr>
+                    <td>Withdrawal Fee</td>
+                    <td>0%</td>
+                    <td>No fees on ROI or principal withdrawals</td>
+                </tr>
+                <tr>
+                    <td>Referral Commission</td>
+                    <td>20%</td>
+                    <td>Distributed across 7 levels on deposit amount</td>
+                </tr>
+            </tbody>
+        </table>
+        
+        <!-- 4. Referral System -->
+        <h2 id="referral-system">4. Referral System</h2>
+        
+        <h3>4.1 7-Level Structure</h3>
+        <p>The protocol features a <strong>7-level referral system</strong> that pays <strong>20% total commission</strong> on every deposit:</p>
+        
+        <table>
+            <thead>
+                <tr>
+                    <th>Level</th>
+                    <th>Commission</th>
+                    <th>Example (1000 USDT deposit)</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>Level 1 (Direct)</td>
+                    <td>8.0%</td>
+                    <td>80 USDT</td>
+                </tr>
+                <tr>
+                    <td>Level 2</td>
+                    <td>4.0%</td>
+                    <td>40 USDT</td>
+                </tr>
+                <tr>
+                    <td>Level 3</td>
+                    <td>3.0%</td>
+                    <td>30 USDT</td>
+                </tr>
+                <tr>
+                    <td>Level 4</td>
+                    <td>2.0%</td>
+                    <td>20 USDT</td>
+                </tr>
+                <tr>
+                    <td>Level 5</td>
+                    <td>1.5%</td>
+                    <td>15 USDT</td>
+                </tr>
+                <tr>
+                    <td>Level 6</td>
+                    <td>1.0%</td>
+                    <td>10 USDT</td>
+                </tr>
+                <tr>
+                    <td>Level 7</td>
+                    <td>0.5%</td>
+                    <td>5 USDT</td>
+                </tr>
+                <tr style="border-top: 2px solid var(--primary);">
+                    <td><strong>Total</strong></td>
+                    <td><strong>20%</strong></td>
+                    <td><strong>200 USDT</strong></td>
+                </tr>
+            </tbody>
+        </table>
+        
+        <h3>4.2 Referral Locking</h3>
+        <p>Once a user makes their first deposit with a referrer, that relationship is <strong>permanently locked</strong>. This prevents:</p>
+        <ul>
+            <li>Referral hijacking</li>
+            <li>Chain manipulation</li>
+            <li>Ensures stable team structures</li>
+        </ul>
+        
+        <h3>4.3 Vanity Username System</h3>
+        <p>Users can claim alphanumeric usernames for readable referral links:</p>
+        <ul>
+            <li><strong>Format:</strong> 3-20 characters, alphanumeric only</li>
+            <li><strong>Unique:</strong> First-come, first-served</li>
+            <li><strong>Example:</strong> <code>nox.fund/?ref=alice</code> instead of <code>?ref=0x123...</code></li>
+        </ul>
+        
+        <!-- 5. Security -->
+        <h2 id="security">5. Security & Trustlessness</h2>
+        
+        <h3>5.1 Trustless Guarantees</h3>
+        
+        <table>
+            <thead>
+                <tr>
+                    <th>Feature</th>
+                    <th>Status</th>
+                    <th>Benefit</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>No Owner</td>
+                    <td><span class="badge">✓ Verified</span></td>
+                    <td>No admin functions or privileged roles</td>
+                </tr>
+                <tr>
+                    <td>No Proxy</td>
+                    <td><span class="badge">✓ Verified</span></td>
+                    <td>Direct implementation, no delegatecall</td>
+                </tr>
+                <tr>
+                    <td>No Upgrades</td>
+                    <td><span class="badge">✓ Verified</span></td>
+                    <td>Cannot be altered after deployment</td>
+                </tr>
+                <tr>
+                    <td>No Pause</td>
+                    <td><span class="badge">✓ Verified</span></td>
+                    <td>Contract runs perpetually</td>
+                </tr>
+                <tr>
+                    <td>Immutable Constants</td>
+                    <td><span class="badge">✓ Verified</span></td>
+                    <td>All parameters permanently fixed</td>
+                </tr>
+                <tr>
+                    <td>Pull Payments</td>
+                    <td><span class="badge">✓ Verified</span></td>
+                    <td>Users control all withdrawals</td>
+                </tr>
+            </tbody>
+        </table>
+        
+        <h3>5.2 Audit Results</h3>
+        <p>Audited by <strong>HazeCrypto</strong> with the following findings:</p>
+        <ul>
+            <li><strong>Critical Issues:</strong> 0</li>
+            <li><strong>High Issues:</strong> 0</li>
+            <li><strong>Medium Issues:</strong> 0</li>
+            <li><strong>Low Issues:</strong> All resolved</li>
+            <li><strong>Informational:</strong> Optimizations implemented</li>
+        </ul>
+        
+        <p><a href="https://hazecrypto.net/audit/Noxfund" style="color: var(--primary);">View Full Audit Report →</a></p>
+        
+        <h3>5.3 Security Mechanisms</h3>
+        
+        <h4>Reentrancy Protection</h4>
+        <pre><code>modifier nonReentrant() {
+    require(_status == 0, "NoxFund: reentrant call");
+    _status = 1;
+    _;
+    _status = 0;
+}</code></pre>
+        
+        <h4>Safe Token Transfers</h4>
+        <pre><code>using SafeERC20 for IERC20;
+USDT.safeTransferFrom(msg.sender, address(this), amount);</code></pre>
+        
+        <h4>Integer Overflow Protection</h4>
+        <p>Solidity ^0.8.24 has built-in overflow/underflow checks. All critical calculations use safe math.</p>
+        
+        <!-- 6. Smart Contract Details -->
+        <h2 id="smart-contract">6. Smart Contract Details</h2>
+        
+        <h3>6.1 Core Functions</h3>
+        
+        <h4>deposit(uint256 amount, string referralIdentifier)</h4>
+        <p>Makes a new deposit with optional referrer:</p>
+        <ul>
+            <li>Minimum: 1 USDT</li>
+            <li>Maximum deposits per user: 200</li>
+            <li>Referrer locked on first deposit</li>
+            <li>5% fee sent to fee recipient</li>
+            <li>20% referral commissions distributed</li>
+        </ul>
+        
+        <h4>withdrawROI(uint256[] depositIndices)</h4>
+        <p>Withdraws accumulated ROI from specified deposits:</p>
+        <ul>
+            <li>Calculates days elapsed since last claim</li>
+            <li>Caps at 365 days total per deposit</li>
+            <li>Updates lastClaimTime</li>
+            <li>Transfers USDT to user</li>
+        </ul>
+        
+        <h4>withdrawPrincipal(uint256[] depositIndices)</h4>
+        <p>Withdraws unlocked principals:</p>
+        <ul>
+            <li>Requires 45+ days since deposit</li>
+            <li>Also claims any pending ROI</li>
+            <li>Marks deposit as withdrawn</li>
+            <li>Transfers principal + ROI</li>
+        </ul>
+        
+        <h4>withdrawReferralBalance()</h4>
+        <p>Withdraws accumulated referral commissions:</p>
+        <ul>
+            <li>Claims all pending referral earnings</li>
+            <li>Updates global tracking</li>
+            <li>Transfers USDT to user</li>
+        </ul>
+        
+        <h3>6.2 View Functions</h3>
+        
+        <ul>
+            <li><code>getUserInfo(address)</code> — Complete user statistics</li>
+            <li><code>getDepositInfo(address, index)</code> — Specific deposit details</li>
+            <li><code>calculateROI(address, index)</code> — Unclaimed ROI amount</li>
+            <li><code>canWithdrawPrincipal(address, index)</code> — Lock status check</li>
+        </ul>
+        
+        <!-- 7. Tokenomics -->
+        <h2 id="tokenomics">7. Tokenomics & Sustainability</h2>
+        
+        <h3>7.1 Revenue Distribution</h3>
+        <p>On every 1000 USDT deposit:</p>
+        
+        <table>
+            <thead>
+                <tr>
+                    <th>Allocation</th>
+                    <th>Amount</th>
+                    <th>Percentage</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>User Principal (locked 45d)</td>
+                    <td>1,000 USDT</td>
+                    <td>100%</td>
+                </tr>
+                <tr>
+                    <td>Protocol Fee</td>
+                    <td>50 USDT</td>
+                    <td>5%</td>
+                </tr>
+                <tr>
+                    <td>Referral Commissions (7 levels)</td>
+                    <td>200 USDT</td>
+                    <td>20%</td>
+                </tr>
+                <tr>
+                    <td><strong>Total Pool Contribution</strong></td>
+                    <td><strong>250 USDT</strong></td>
+                    <td><strong>25%</strong></td>
+                </tr>
+            </tbody>
+        </table>
+        
+        <div class="highlight-box">
+            <strong>Note:</strong> The 5% fee and 20% referral commissions are paid by the pool, not deducted from the user's deposit. Users receive full ROI on their entire deposit amount.
+        </div>
+        
+        <h3>7.2 Sustainability Model</h3>
+        <p>The protocol is designed as a <strong>community-driven yield pool</strong>:</p>
+        
+        <ul>
+            <li><strong>New Deposits:</strong> Fund ROI payments and commissions</li>
+            <li><strong>45-Day Lock:</strong> Creates liquidity buffer</li>
+            <li><strong>365-Day Cap:</strong> Limits total payout per deposit</li>
+            <li><strong>Compound Effect:</strong> Most users reinvest, extending participation</li>
+        </ul>
+        
+        <h3>7.3 Risk Disclosure</h3>
+        <div class="highlight-box">
+            <strong>⚠️ Important:</strong> NOX FUND operates as a high-yield protocol dependent on continuous participation. Like all DeFi protocols:
+            <ul style="margin: 12px 0 0 20px;">
+                <li>Returns depend on new deposits entering the pool</li>
+                <li>Principal is locked for 45 days</li>
+                <li>Smart contract risk exists despite audits</li>
+                <li>Only invest what you can afford to lose</li>
+            </ul>
+        </div>
+        
+        <!-- 8. Conclusion -->
+        <h2 id="conclusion">8. Conclusion</h2>
+        
+        <p>NOX FUND represents a new paradigm in DeFi passive income protocols: completely trustless, immutable, and transparent. By eliminating all admin privileges and using compile-time constants, the protocol ensures that:</p>
+        
+        <ul>
+            <li>✅ No one can change the rules</li>
+            <li>✅ No one can pause or upgrade the contract</li>
+            <li>✅ No one can access user funds without their consent</li>
+            <li>✅ All logic is permanently fixed and verifiable</li>
+        </ul>
+        
+        <p>The 7-level referral system and 45-day rolling lock mechanism create powerful incentives for community growth and sustainable yield generation.</p>
+        
+        <div class="highlight-box">
+            <strong>🎯 Start earning 1.5% daily:</strong> <a href="../" style="color: var(--primary);">Launch App →</a><br>
+            <strong>💬 Join the community:</strong> <a href="https://t.me/noxfundchat" style="color: var(--primary);">Telegram Chat →</a><br>
+            <strong>📊 View contract:</strong> <a href="https://bscscan.com/address/0x433830E36585bdACC840E1caB419C4211bBf13f5" style="color: var(--primary);">BSCScan →</a>
+        </div>
+        
+        <hr style="border: none; border-top: 1px solid var(--border); margin: 48px 0;">
+        
+        <p style="text-align: center; color: var(--text-muted); font-size: 14px;">
+            <strong>Disclaimer:</strong> This whitepaper is for informational purposes only and does not constitute investment advice. Cryptocurrency investments carry risk. Always do your own research.
+        </p>
+    </div>
+</body>
+</html>

@@ -1,0 +1,419 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="nox">
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
+    <title>Getting Started | NOX FUND - Complete Beginner's Guide</title>
+    
+    <meta name="description" content="Complete step-by-step guide to start earning with NOX FUND. Set up wallet, make first deposit, and claim your daily 1.5% returns." />
+    
+    <link rel="icon" href="../assets/img/favicon.svg" type="image/svg+xml" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=Inter:wght@400;500;600&display=swap" rel="stylesheet" />
+    
+    <style>
+        :root {
+            --primary: #667eea;
+            --primary-dark: #764ba2;
+            --bg-dark: #07030f;
+            --bg-card: #1a0a2e;
+            --text: #ffffff;
+            --text-muted: #a0a0a0;
+            --border: #2d1b4e;
+            --success: #10b981;
+        }
+        
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+            background: linear-gradient(135deg, var(--bg-dark) 0%, #1a0a2e 100%);
+            color: var(--text);
+            line-height: 1.7;
+        }
+        
+        .container {
+            max-width: 900px;
+            margin: 0 auto;
+            padding: 40px 20px 80px;
+        }
+        
+        .nav-back {
+            display: inline-block;
+            margin-bottom: 24px;
+            padding: 8px 16px;
+            background: rgba(102, 126, 234, 0.1);
+            border: 1px solid var(--border);
+            border-radius: 8px;
+            color: var(--text);
+            text-decoration: none;
+            font-size: 14px;
+            transition: all 0.3s;
+        }
+        
+        .nav-back:hover {
+            background: rgba(102, 126, 234, 0.2);
+            border-color: var(--primary);
+        }
+        
+        .header {
+            text-align: center;
+            margin-bottom: 48px;
+        }
+        
+        .icon {
+            font-size: 64px;
+            margin-bottom: 16px;
+        }
+        
+        h1 {
+            font-family: 'Space Grotesk', sans-serif;
+            font-size: 42px;
+            font-weight: 700;
+            margin-bottom: 16px;
+            background: linear-gradient(135deg, var(--primary) 0%, var(--primary-dark) 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+        
+        .subtitle {
+            font-size: 18px;
+            color: var(--text-muted);
+        }
+        
+        h2 {
+            font-family: 'Space Grotesk', sans-serif;
+            font-size: 28px;
+            font-weight: 700;
+            margin: 48px 0 24px;
+            padding-bottom: 12px;
+            border-bottom: 2px solid var(--border);
+        }
+        
+        .step-card {
+            background: var(--bg-card);
+            border: 1px solid var(--border);
+            border-radius: 12px;
+            padding: 32px;
+            margin-bottom: 24px;
+        }
+        
+        .step-header {
+            display: flex;
+            align-items: center;
+            margin-bottom: 20px;
+        }
+        
+        .step-number {
+            width: 50px;
+            height: 50px;
+            background: linear-gradient(135deg, var(--primary) 0%, var(--primary-dark) 100%);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 24px;
+            font-weight: 700;
+            margin-right: 16px;
+            flex-shrink: 0;
+        }
+        
+        .step-title {
+            font-size: 22px;
+            font-weight: 700;
+        }
+        
+        .checklist {
+            list-style: none;
+            margin: 16px 0;
+        }
+        
+        .checklist li {
+            padding: 8px 0 8px 32px;
+            position: relative;
+        }
+        
+        .checklist li::before {
+            content: "✓";
+            position: absolute;
+            left: 8px;
+            color: var(--success);
+            font-weight: 700;
+        }
+        
+        .warning-box {
+            background: rgba(245, 158, 11, 0.1);
+            border-left: 4px solid #f59e0b;
+            padding: 16px 20px;
+            border-radius: 8px;
+            margin: 16px 0;
+        }
+        
+        .success-box {
+            background: rgba(16, 185, 129, 0.1);
+            border-left: 4px solid var(--success);
+            padding: 16px 20px;
+            border-radius: 8px;
+            margin: 16px 0;
+        }
+        
+        code {
+            background: var(--bg-dark);
+            padding: 2px 6px;
+            border-radius: 4px;
+            font-family: monospace;
+            font-size: 14px;
+        }
+        
+        @media (max-width: 768px) {
+            h1 {
+                font-size: 32px;
+            }
+            
+            .step-number {
+                width: 40px;
+                height: 40px;
+                font-size: 20px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <a href="index.html" class="nav-back">← Back to Docs</a>
+        
+        <div class="header">
+            <div class="icon">🚀</div>
+            <h1>Getting Started</h1>
+            <p class="subtitle">Your complete guide to earning 1.5% daily with NOX FUND</p>
+        </div>
+        
+        <div class="success-box">
+            <strong>⏱️ Time to complete:</strong> 15-30 minutes<br>
+            <strong>💰 Minimum investment:</strong> 1 USDT<br>
+            <strong>🔧 Technical level:</strong> Beginner-friendly
+        </div>
+        
+        <h2>📋 What You'll Need</h2>
+        
+        <ul class="checklist">
+            <li>A Web3 wallet (MetaMask recommended)</li>
+            <li>BNB for gas fees (~$1-2 worth)</li>
+            <li>USDT (BEP-20) for your deposit</li>
+            <li>10-15 minutes of your time</li>
+        </ul>
+        
+        <h2>🎯 Step-by-Step Guide</h2>
+        
+        <!-- Step 1 -->
+        <div class="step-card">
+            <div class="step-header">
+                <div class="step-number">1</div>
+                <div class="step-title">Install MetaMask Wallet</div>
+            </div>
+            
+            <p>MetaMask is a browser extension wallet that lets you interact with blockchain apps.</p>
+            
+            <h4 style="margin-top: 20px;">Installation:</h4>
+            <ol>
+                <li>Visit <code>metamask.io</code></li>
+                <li>Click "Download" and install for your browser</li>
+                <li>Create a new wallet or import existing one</li>
+                <li><strong>IMPORTANT:</strong> Write down your 12-word seed phrase and store it safely</li>
+                <li>Never share your seed phrase with anyone!</li>
+            </ol>
+            
+            <div class="warning-box">
+                <strong>⚠️ Security Warning:</strong> Your seed phrase is the key to your wallet. Anyone with it can access your funds. Keep it offline in a secure location. NOX FUND will NEVER ask for your seed phrase.
+            </div>
+        </div>
+        
+        <!-- Step 2 -->
+        <div class="step-card">
+            <div class="step-header">
+                <div class="step-number">2</div>
+                <div class="step-title">Add BNB Smart Chain Network</div>
+            </div>
+            
+            <p>NOX FUND runs on BNB Smart Chain (BSC). You need to add this network to MetaMask:</p>
+            
+            <h4 style="margin-top: 20px;">Method 1: Automatic (Easiest)</h4>
+            <ol>
+                <li>Visit <code>chainlist.org</code></li>
+                <li>Search "BNB Smart Chain"</li>
+                <li>Click "Connect Wallet" and approve</li>
+            </ol>
+            
+            <h4 style="margin-top: 20px;">Method 2: Manual</h4>
+            <ol>
+                <li>Open MetaMask</li>
+                <li>Click network dropdown (top center)</li>
+                <li>Click "Add Network" → "Add network manually"</li>
+                <li>Enter these details:
+                    <ul style="margin-top: 8px;">
+                        <li>Network Name: <code>BNB Smart Chain</code></li>
+                        <li>RPC URL: <code>https://bsc-dataseed.binance.org/</code></li>
+                        <li>Chain ID: <code>56</code></li>
+                        <li>Symbol: <code>BNB</code></li>
+                        <li>Block Explorer: <code>https://bscscan.com</code></li>
+                    </ul>
+                </li>
+                <li>Click "Save"</li>
+            </ol>
+        </div>
+        
+        <!-- Step 3 -->
+        <div class="step-card">
+            <div class="step-header">
+                <div class="step-number">3</div>
+                <div class="step-title">Get BNB & USDT</div>
+            </div>
+            
+            <p>You need two tokens:</p>
+            <ul>
+                <li><strong>BNB:</strong> For transaction gas fees (~$1-2 is enough)</li>
+                <li><strong>USDT:</strong> For your NOX FUND deposit</li>
+            </ul>
+            
+            <h4 style="margin-top: 20px;">Option A: Buy from Centralized Exchange</h4>
+            <ol>
+                <li>Sign up at Binance, KuCoin, or similar</li>
+                <li>Buy BNB and USDT</li>
+                <li>Withdraw to your MetaMask address</li>
+                <li><strong>Important:</strong> Select "BEP-20" or "BSC" network for withdrawal</li>
+            </ol>
+            
+            <h4 style="margin-top: 20px;">Option B: Use DEX (PancakeSwap)</h4>
+            <ol>
+                <li>Buy BNB from an exchange and send to MetaMask</li>
+                <li>Go to <code>pancakeswap.finance</code></li>
+                <li>Connect your wallet</li>
+                <li>Swap some BNB for USDT (keep ~$2 of BNB for gas)</li>
+            </ol>
+            
+            <div class="warning-box">
+                <strong>⚠️ Network Warning:</strong> Always use BEP-20/BSC network. Using wrong network (like Ethereum) will result in lost funds.
+            </div>
+        </div>
+        
+        <!-- Step 4 -->
+        <div class="step-card">
+            <div class="step-header">
+                <div class="step-number">4</div>
+                <div class="step-title">Connect to NOX FUND</div>
+            </div>
+            
+            <ol>
+                <li>Visit <code>nox.fund</code> (bookmark this!)</li>
+                <li>Click "Connect Wallet" button</li>
+                <li>Select MetaMask from options</li>
+                <li>Approve the connection in MetaMask popup</li>
+                <li>Verify you're on BNB Smart Chain (Chain ID: 56)</li>
+            </ol>
+            
+            <div class="success-box">
+                <strong>✅ Connected Successfully:</strong> You should see your wallet address in the top right corner.
+            </div>
+        </div>
+        
+        <!-- Step 5 -->
+        <div class="step-card">
+            <div class="step-header">
+                <div class="step-number">5</div>
+                <div class="step-title">Make Your First Deposit</div>
+            </div>
+            
+            <ol>
+                <li>Enter deposit amount (minimum 1 USDT)</li>
+                <li>Optional: Enter referrer address or username</li>
+                <li>Click "Deposit" button</li>
+                <li><strong>First time:</strong> You'll need to approve USDT spending
+                    <ul>
+                        <li>Click "Approve" and confirm in MetaMask</li>
+                        <li>Wait for confirmation (~5 seconds)</li>
+                    </ul>
+                </li>
+                <li>Click "Deposit" again and confirm transaction</li>
+                <li>Wait for confirmation (~5 seconds)</li>
+                <li>Success! You're now earning 1.5% daily</li>
+            </ol>
+            
+            <div class="success-box">
+                <strong>🎉 Congratulations!</strong> Your deposit is now earning. You can claim ROI anytime, and your principal unlocks after 45 days.
+            </div>
+        </div>
+        
+        <!-- Step 6 -->
+        <div class="step-card">
+            <div class="step-header">
+                <div class="step-number">6</div>
+                <div class="step-title">Claim Your Daily Earnings</div>
+            </div>
+            
+            <p>After 24 hours, you'll have earned 1.5% of your deposit:</p>
+            
+            <h4 style="margin-top: 20px;">To Claim:</h4>
+            <ol>
+                <li>Go to NOX FUND dashboard</li>
+                <li>Check "Available ROI" amount</li>
+                <li>Click "Claim ROI" button</li>
+                <li>Confirm transaction in MetaMask</li>
+                <li>USDT instantly sent to your wallet!</li>
+            </ol>
+            
+            <h4 style="margin-top: 20px;">Compounding Strategy:</h4>
+            <p>Instead of withdrawing, you can reinvest your daily earnings as new deposits to compound your returns exponentially.</p>
+        </div>
+        
+        <!-- Step 7 -->
+        <div class="step-card">
+            <div class="step-header">
+                <div class="step-number">7</div>
+                <div class="step-title">Optional: Claim Your Username</div>
+            </div>
+            
+            <ol>
+                <li>Go to dashboard settings</li>
+                <li>Click "Claim Username"</li>
+                <li>Enter your desired username (3-20 characters)</li>
+                <li>Confirm transaction</li>
+                <li>Share your clean referral link: <code>nox.fund/?ref=yourusername</code></li>
+            </ol>
+        </div>
+        
+        <h2>✅ Quick Checklist</h2>
+        
+        <ul class="checklist">
+            <li>Wallet installed and secured</li>
+            <li>BNB Smart Chain network added</li>
+            <li>BNB for gas fees in wallet</li>
+            <li>USDT ready for deposit</li>
+            <li>Connected to nox.fund</li>
+            <li>First deposit completed</li>
+            <li>Understanding when to claim/compound</li>
+        </ul>
+        
+        <h2>📚 Next Steps</h2>
+        
+        <div style="background: var(--bg-card); border: 1px solid var(--border); border-radius: 12px; padding: 24px; margin: 24px 0;">
+            <h3 style="margin-top: 0;">Learn More:</h3>
+            <ul>
+                <li>📈 <a href="compounding-guide.html" style="color: var(--primary);">Compounding Strategies</a> - Maximize your returns</li>
+                <li>🤝 <a href="referral-system.html" style="color: var(--primary);">Referral System</a> - Earn extra income</li>
+                <li>🔒 <a href="security.html" style="color: var(--primary);">Security Guide</a> - Protect your funds</li>
+                <li>❓ <a href="faq.html" style="color: var(--primary);">FAQ</a> - Common questions answered</li>
+            </ul>
+        </div>
+        
+        <div class="success-box" style="margin-top: 32px;">
+            <strong>🎯 You're all set!</strong> Start earning 1.5% daily and join thousands of others building passive income with NOX FUND.
+        </div>
+    </div>
+</body>
+</html>

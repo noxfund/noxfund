@@ -1,0 +1,484 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="nox">
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
+    <title>FAQ | NOX FUND - Frequently Asked Questions</title>
+    
+    <meta name="description" content="Answers to common questions about NOX FUND protocol. Learn about deposits, withdrawals, safety, returns, and troubleshooting." />
+    
+    <link rel="icon" href="../assets/img/favicon.svg" type="image/svg+xml" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=Inter:wght@400;500;600&display=swap" rel="stylesheet" />
+    
+    <style>
+        :root {
+            --primary: #667eea;
+            --primary-dark: #764ba2;
+            --bg-dark: #07030f;
+            --bg-card: #1a0a2e;
+            --text: #ffffff;
+            --text-muted: #a0a0a0;
+            --border: #2d1b4e;
+        }
+        
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+            background: linear-gradient(135deg, var(--bg-dark) 0%, #1a0a2e 100%);
+            color: var(--text);
+            line-height: 1.7;
+        }
+        
+        .container {
+            max-width: 900px;
+            margin: 0 auto;
+            padding: 40px 20px 80px;
+        }
+        
+        .nav-back {
+            display: inline-block;
+            margin-bottom: 24px;
+            padding: 8px 16px;
+            background: rgba(102, 126, 234, 0.1);
+            border: 1px solid var(--border);
+            border-radius: 8px;
+            color: var(--text);
+            text-decoration: none;
+            font-size: 14px;
+            transition: all 0.3s;
+        }
+        
+        .nav-back:hover {
+            background: rgba(102, 126, 234, 0.2);
+            border-color: var(--primary);
+        }
+        
+        .header {
+            text-align: center;
+            margin-bottom: 48px;
+        }
+        
+        .icon {
+            font-size: 64px;
+            margin-bottom: 16px;
+        }
+        
+        h1 {
+            font-family: 'Space Grotesk', sans-serif;
+            font-size: 42px;
+            font-weight: 700;
+            margin-bottom: 16px;
+            background: linear-gradient(135deg, var(--primary) 0%, var(--primary-dark) 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+        
+        .subtitle {
+            font-size: 18px;
+            color: var(--text-muted);
+        }
+        
+        h2 {
+            font-family: 'Space Grotesk', sans-serif;
+            font-size: 28px;
+            font-weight: 700;
+            margin: 48px 0 24px;
+            padding-bottom: 12px;
+            border-bottom: 2px solid var(--border);
+        }
+        
+        .faq-item {
+            background: var(--bg-card);
+            border: 1px solid var(--border);
+            border-radius: 12px;
+            padding: 24px;
+            margin-bottom: 16px;
+            cursor: pointer;
+            transition: all 0.3s;
+        }
+        
+        .faq-item:hover {
+            border-color: var(--primary);
+        }
+        
+        .faq-question {
+            font-size: 18px;
+            font-weight: 600;
+            color: var(--primary);
+            margin-bottom: 12px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        
+        .faq-answer {
+            font-size: 16px;
+            line-height: 1.7;
+        }
+        
+        .faq-answer ul {
+            margin: 12px 0 12px 24px;
+        }
+        
+        .faq-answer li {
+            margin-bottom: 8px;
+        }
+        
+        .faq-answer code {
+            background: var(--bg-dark);
+            padding: 2px 6px;
+            border-radius: 4px;
+            font-family: monospace;
+            font-size: 14px;
+        }
+        
+        .category-nav {
+            display: flex;
+            gap: 12px;
+            flex-wrap: wrap;
+            margin-bottom: 32px;
+            justify-content: center;
+        }
+        
+        .category-link {
+            padding: 8px 16px;
+            background: rgba(102, 126, 234, 0.1);
+            border: 1px solid var(--border);
+            border-radius: 8px;
+            color: var(--text);
+            text-decoration: none;
+            font-size: 14px;
+            transition: all 0.3s;
+        }
+        
+        .category-link:hover {
+            background: rgba(102, 126, 234, 0.2);
+            border-color: var(--primary);
+        }
+        
+        @media (max-width: 768px) {
+            h1 {
+                font-size: 32px;
+            }
+            
+            .faq-question {
+                font-size: 16px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <a href="index.html" class="nav-back">← Back to Docs</a>
+        
+        <div class="header">
+            <div class="icon">❓</div>
+            <h1>Frequently Asked Questions</h1>
+            <p class="subtitle">Find answers to common questions about NOX FUND</p>
+        </div>
+        
+        <div class="category-nav">
+            <a href="#basics" class="category-link">Basics</a>
+            <a href="#deposits" class="category-link">Deposits</a>
+            <a href="#withdrawals" class="category-link">Withdrawals</a>
+            <a href="#referrals" class="category-link">Referrals</a>
+            <a href="#technical" class="category-link">Technical</a>
+            <a href="#safety" class="category-link">Safety</a>
+        </div>
+        
+        <h2 id="basics">🎯 Basics</h2>
+        
+        <div class="faq-item">
+            <div class="faq-question">What is NOX FUND?</div>
+            <div class="faq-answer">
+                NOX FUND is a trustless passive income protocol on BNB Smart Chain that pays 1.5% daily returns on USDT deposits. It's completely ownerless with no admin keys, meaning the smart contract runs automatically without any human intervention.
+            </div>
+        </div>
+        
+        <div class="faq-item">
+            <div class="faq-question">How much can I earn?</div>
+            <div class="faq-answer">
+                You earn <strong>1.5% per day</strong> on your full deposit amount. For example:
+                <ul>
+                    <li>100 USDT deposit = 1.5 USDT daily</li>
+                    <li>1,000 USDT deposit = 15 USDT daily</li>
+                    <li>10,000 USDT deposit = 150 USDT daily</li>
+                </ul>
+                Maximum total ROI per deposit is 547.5% (365 days × 1.5%).
+            </div>
+        </div>
+        
+        <div class="faq-item">
+            <div class="faq-question">Is there a minimum deposit?</div>
+            <div class="faq-answer">
+                Yes, the minimum deposit is <strong>1 USDT</strong>. There is no maximum limit, but each wallet can have up to 200 separate deposits.
+            </div>
+        </div>
+        
+        <div class="faq-item">
+            <div class="faq-question">What blockchain is this on?</div>
+            <div class="faq-answer">
+                NOX FUND is deployed on <strong>BNB Smart Chain (BSC)</strong>. You'll need BNB for gas fees and USDT (BEP-20) for deposits.
+            </div>
+        </div>
+        
+        <h2 id="deposits">💰 Deposits & Returns</h2>
+        
+        <div class="faq-item">
+            <div class="faq-question">How long is my capital locked?</div>
+            <div class="faq-answer">
+                Your principal is locked for <strong>45 days</strong> from the deposit timestamp. After 45 days, you can withdraw your principal. Your daily ROI is claimable anytime, even during the lock period.
+            </div>
+        </div>
+        
+        <div class="faq-item">
+            <div class="faq-question">Are there any fees?</div>
+            <div class="faq-answer">
+                <ul>
+                    <li><strong>Deposit fee:</strong> 5% (paid by the pool, not deducted from your deposit)</li>
+                    <li><strong>Withdrawal fee:</strong> 0% (completely free)</li>
+                    <li><strong>Gas fees:</strong> Standard BNB network fees (~$0.10-0.50 per transaction)</li>
+                </ul>
+            </div>
+        </div>
+        
+        <div class="faq-item">
+            <div class="faq-question">Can I make multiple deposits?</div>
+            <div class="faq-answer">
+                Yes! You can make up to 200 separate deposits per wallet. Each deposit has its own 45-day lock timer and earns independently. This is great for the rolling lock strategy.
+            </div>
+        </div>
+        
+        <div class="faq-item">
+            <div class="faq-question">When do I start earning?</div>
+            <div class="faq-answer">
+                You start earning <strong>immediately</strong> upon deposit. ROI accumulates every second and can be claimed anytime.
+            </div>
+        </div>
+        
+        <h2 id="withdrawals">💸 Withdrawals</h2>
+        
+        <div class="faq-item">
+            <div class="faq-question">How do I withdraw my earnings?</div>
+            <div class="faq-answer">
+                Go to the app dashboard and click:
+                <ul>
+                    <li><strong>"Claim ROI"</strong> to withdraw daily earnings</li>
+                    <li><strong>"Withdraw Principal"</strong> to withdraw unlocked capital (after 45 days)</li>
+                    <li><strong>"Withdraw Referrals"</strong> to claim referral commissions</li>
+                </ul>
+                All withdrawals are instant—USDT goes directly to your wallet.
+            </div>
+        </div>
+        
+        <div class="faq-item">
+            <div class="faq-question">Can I withdraw anytime?</div>
+            <div class="faq-answer">
+                <ul>
+                    <li><strong>ROI:</strong> Yes, anytime—even during lock period</li>
+                    <li><strong>Principal:</strong> Only after 45 days from deposit</li>
+                    <li><strong>Referral commissions:</strong> Yes, anytime</li>
+                </ul>
+            </div>
+        </div>
+        
+        <div class="faq-item">
+            <div class="faq-question">What if there's not enough liquidity?</div>
+            <div class="faq-answer">
+                The protocol requires sufficient USDT in the pool for withdrawals. If liquidity is temporarily low, you may need to wait for new deposits to come in. Principal withdrawals are prioritized, and any unclaimed ROI is preserved for later withdrawal.
+            </div>
+        </div>
+        
+        <h2 id="referrals">🤝 Referral System</h2>
+        
+        <div class="faq-item">
+            <div class="faq-question">How does the referral system work?</div>
+            <div class="faq-answer">
+                NOX FUND has a 7-level referral structure that pays <strong>20% total commission</strong> on every deposit:
+                <ul>
+                    <li>Level 1: 8%</li>
+                    <li>Level 2: 4%</li>
+                    <li>Level 3: 3%</li>
+                    <li>Level 4: 2%</li>
+                    <li>Level 5: 1.5%</li>
+                    <li>Level 6: 1%</li>
+                    <li>Level 7: 0.5%</li>
+                </ul>
+                Commissions are paid instantly when someone in your downline deposits.
+            </div>
+        </div>
+        
+        <div class="faq-item">
+            <div class="faq-question">Do I need referrals to earn?</div>
+            <div class="faq-answer">
+                <strong>No!</strong> You earn 1.5% daily on your own deposits regardless of referrals. The referral system is an optional way to earn extra income.
+            </div>
+        </div>
+        
+        <div class="faq-item">
+            <div class="faq-question">Can I change my referrer?</div>
+            <div class="faq-answer">
+                No. Once you make your first deposit with a referrer, that relationship is permanently locked. This prevents manipulation and ensures stable team structures.
+            </div>
+        </div>
+        
+        <div class="faq-item">
+            <div class="faq-question">What's the vanity username system?</div>
+            <div class="faq-answer">
+                You can claim a unique username (3-20 characters) for a readable referral link. For example: <code>nox.fund/?ref=alice</code> instead of <code>?ref=0x123...</code>. Usernames are first-come, first-served and cannot be changed.
+            </div>
+        </div>
+        
+        <h2 id="technical">🔧 Technical</h2>
+        
+        <div class="faq-item">
+            <div class="faq-question">What wallet do I need?</div>
+            <div class="faq-answer">
+                You need a Web3 wallet that supports BNB Smart Chain:
+                <ul>
+                    <li>MetaMask (recommended)</li>
+                    <li>Trust Wallet</li>
+                    <li>Coinbase Wallet</li>
+                    <li>WalletConnect-compatible wallets</li>
+                </ul>
+            </div>
+        </div>
+        
+        <div class="faq-item">
+            <div class="faq-question">How do I add BNB Smart Chain to MetaMask?</div>
+            <div class="faq-answer">
+                <ol>
+                    <li>Open MetaMask</li>
+                    <li>Click network dropdown (top center)</li>
+                    <li>Click "Add Network"</li>
+                    <li>Search "BNB Smart Chain" or add manually:</li>
+                </ol>
+                <ul>
+                    <li>Network Name: BNB Smart Chain</li>
+                    <li>RPC URL: https://bsc-dataseed.binance.org/</li>
+                    <li>Chain ID: 56</li>
+                    <li>Symbol: BNB</li>
+                    <li>Explorer: https://bscscan.com</li>
+                </ul>
+            </div>
+        </div>
+        
+        <div class="faq-item">
+            <div class="faq-question">Where do I get USDT?</div>
+            <div class="faq-answer">
+                Buy USDT from:
+                <ul>
+                    <li><strong>Centralized exchanges:</strong> Binance, KuCoin, etc. (withdraw as BEP-20)</li>
+                    <li><strong>DEXs:</strong> PancakeSwap (swap BNB for USDT)</li>
+                    <li><strong>On-ramps:</strong> Simplex, MoonPay (buy directly to wallet)</li>
+                </ul>
+                Make sure you're using <strong>USDT on BSC (BEP-20)</strong>, not Ethereum or other chains.
+            </div>
+        </div>
+        
+        <div class="faq-item">
+            <div class="faq-question">Why is my transaction failing?</div>
+            <div class="faq-answer">
+                Common reasons:
+                <ul>
+                    <li><strong>Insufficient BNB:</strong> You need BNB for gas fees (~$0.50)</li>
+                    <li><strong>No USDT approval:</strong> First transaction must approve contract to spend USDT</li>
+                    <li><strong>Low gas limit:</strong> Increase gas limit in wallet settings</li>
+                    <li><strong>Wrong network:</strong> Ensure you're on BNB Smart Chain (Chain ID: 56)</li>
+                </ul>
+            </div>
+        </div>
+        
+        <h2 id="safety">🔒 Safety & Security</h2>
+        
+        <div class="faq-item">
+            <div class="faq-question">Is NOX FUND safe?</div>
+            <div class="faq-answer">
+                NOX FUND prioritizes security:
+                <ul>
+                    <li><strong>Audited:</strong> Smart contract audited by HazeCrypto</li>
+                    <li><strong>Trustless:</strong> No owner, no admin keys, cannot be paused</li>
+                    <li><strong>Immutable:</strong> Code cannot be changed after deployment</li>
+                    <li><strong>Open source:</strong> Verified on BSCScan for transparency</li>
+                </ul>
+                However, all DeFi carries risk. Only invest what you can afford to lose.
+            </div>
+        </div>
+        
+        <div class="faq-item">
+            <div class="faq-question">Is this a Ponzi scheme?</div>
+            <div class="faq-answer">
+                NOX FUND is a transparent DeFi protocol where all logic is on-chain and verifiable. Like many yield protocols, returns are funded by the pool which grows with new deposits. Key differences from Ponzi schemes:
+                <ul>
+                    <li>Completely transparent - all code is public</li>
+                    <li>No central operator to run away with funds</li>
+                    <li>Users control their own withdrawals</li>
+                    <li>Clear disclosure of how it works</li>
+                </ul>
+                Understand the risks and dynamics before participating.
+            </div>
+        </div>
+        
+        <div class="faq-item">
+            <div class="faq-question">Can the developers rug pull?</div>
+            <div class="faq-answer">
+                <strong>No.</strong> NOX FUND is completely ownerless. There are:
+                <ul>
+                    <li>No admin functions</li>
+                    <li>No ownership transfer capabilities</li>
+                    <li>No pause functions</li>
+                    <li>No upgrade mechanism</li>
+                </ul>
+                The developers cannot access funds or modify the contract in any way. Everything is automated by immutable code.
+            </div>
+        </div>
+        
+        <div class="faq-item">
+            <div class="faq-question">What are the risks?</div>
+            <div class="faq-answer">
+                <ul>
+                    <li><strong>Smart contract risk:</strong> Despite audits, bugs could exist</li>
+                    <li><strong>Liquidity risk:</strong> Withdrawals depend on pool having funds</li>
+                    <li><strong>Market risk:</strong> USDT could depeg from $1</li>
+                    <li><strong>Sustainability risk:</strong> Protocol depends on continuous participation</li>
+                    <li><strong>Regulatory risk:</strong> Laws around DeFi may change</li>
+                </ul>
+                Always do your own research and never invest more than you can afford to lose.
+            </div>
+        </div>
+        
+        <div class="faq-item">
+            <div class="faq-question">How do I protect myself?</div>
+            <div class="faq-answer">
+                <ul>
+                    <li>Start with a small amount to test</li>
+                    <li>Never share your seed phrase or private keys</li>
+                    <li>Use a hardware wallet for large amounts</li>
+                    <li>Verify the contract address on BSCScan</li>
+                    <li>Don't fall for phishing sites—bookmark the real URL</li>
+                    <li>Diversify—don't put all your capital in one protocol</li>
+                </ul>
+            </div>
+        </div>
+        
+        <h2>❓ Still Have Questions?</h2>
+        
+        <div style="background: linear-gradient(135deg, rgba(102, 126, 234, 0.1) 0%, rgba(118, 75, 162, 0.1) 100%); border: 1px solid var(--border); border-left: 4px solid var(--primary); padding: 24px; border-radius: 8px; margin: 24px 0;">
+            <p>Can't find your answer? Join our community:</p>
+            <ul style="margin-top: 12px;">
+                <li>💬 <a href="https://t.me/noxfundchat" style="color: var(--primary);">Telegram Community Chat</a></li>
+                <li>📚 <a href="whitepaper.html" style="color: var(--primary);">Read the Full Whitepaper</a></li>
+                <li>🚀 <a href="getting-started.html" style="color: var(--primary);">Getting Started Guide</a></li>
+            </ul>
+        </div>
+    </div>
+</body>
+</html>

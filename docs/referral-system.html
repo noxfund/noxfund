@@ -1,0 +1,530 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="nox">
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
+    <title>Referral System Guide | NOX FUND - Earn 20% Commission</title>
+    
+    <meta name="description" content="Master NOX FUND's 7-level referral system. Learn how to earn 20% commissions on every deposit and build a sustainable passive income network." />
+    <meta name="keywords" content="NOX FUND referrals, MLM, network marketing, passive income, commission structure, team building" />
+    
+    <link rel="icon" href="../assets/img/favicon.svg" type="image/svg+xml" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=Inter:wght@400;500;600&display=swap" rel="stylesheet" />
+    
+    <style>
+        :root {
+            --primary: #667eea;
+            --primary-dark: #764ba2;
+            --bg-dark: #07030f;
+            --bg-card: #1a0a2e;
+            --text: #ffffff;
+            --text-muted: #a0a0a0;
+            --border: #2d1b4e;
+            --success: #10b981;
+        }
+        
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+            background: linear-gradient(135deg, var(--bg-dark) 0%, #1a0a2e 100%);
+            color: var(--text);
+            line-height: 1.7;
+        }
+        
+        .container {
+            max-width: 900px;
+            margin: 0 auto;
+            padding: 40px 20px 80px;
+        }
+        
+        .nav-back {
+            display: inline-block;
+            margin-bottom: 24px;
+            padding: 8px 16px;
+            background: rgba(102, 126, 234, 0.1);
+            border: 1px solid var(--border);
+            border-radius: 8px;
+            color: var(--text);
+            text-decoration: none;
+            font-size: 14px;
+            transition: all 0.3s;
+        }
+        
+        .nav-back:hover {
+            background: rgba(102, 126, 234, 0.2);
+            border-color: var(--primary);
+        }
+        
+        .header {
+            text-align: center;
+            margin-bottom: 48px;
+        }
+        
+        .icon {
+            font-size: 64px;
+            margin-bottom: 16px;
+        }
+        
+        h1 {
+            font-family: 'Space Grotesk', sans-serif;
+            font-size: 42px;
+            font-weight: 700;
+            margin-bottom: 16px;
+            background: linear-gradient(135deg, var(--primary) 0%, var(--primary-dark) 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+        
+        .subtitle {
+            font-size: 18px;
+            color: var(--text-muted);
+        }
+        
+        h2 {
+            font-family: 'Space Grotesk', sans-serif;
+            font-size: 28px;
+            font-weight: 700;
+            margin: 48px 0 24px;
+            padding-bottom: 12px;
+            border-bottom: 2px solid var(--border);
+        }
+        
+        h3 {
+            font-family: 'Space Grotesk', sans-serif;
+            font-size: 22px;
+            font-weight: 600;
+            margin: 32px 0 16px;
+        }
+        
+        p {
+            margin-bottom: 16px;
+            font-size: 16px;
+        }
+        
+        ul, ol {
+            margin: 16px 0 16px 24px;
+        }
+        
+        li {
+            margin-bottom: 8px;
+        }
+        
+        .highlight-box {
+            background: linear-gradient(135deg, rgba(102, 126, 234, 0.1) 0%, rgba(118, 75, 162, 0.1) 100%);
+            border: 1px solid var(--border);
+            border-left: 4px solid var(--primary);
+            padding: 24px;
+            border-radius: 8px;
+            margin: 24px 0;
+        }
+        
+        .success-box {
+            background: rgba(16, 185, 129, 0.1);
+            border-left-color: var(--success);
+        }
+        
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin: 24px 0;
+            background: var(--bg-card);
+            border-radius: 8px;
+            overflow: hidden;
+        }
+        
+        thead {
+            background: rgba(102, 126, 234, 0.1);
+        }
+        
+        th, td {
+            padding: 12px 16px;
+            text-align: left;
+            border-bottom: 1px solid var(--border);
+        }
+        
+        th {
+            font-weight: 600;
+            color: var(--primary);
+        }
+        
+        .level-card {
+            background: var(--bg-card);
+            border: 1px solid var(--border);
+            border-radius: 12px;
+            padding: 24px;
+            margin: 16px 0;
+        }
+        
+        .level-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 12px;
+        }
+        
+        .level-number {
+            font-size: 24px;
+            font-weight: 700;
+            color: var(--primary);
+        }
+        
+        .level-commission {
+            font-size: 32px;
+            font-weight: 700;
+            background: linear-gradient(135deg, var(--primary) 0%, var(--primary-dark) 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+        
+        .example-box {
+            background: var(--code-bg);
+            border: 1px solid var(--border);
+            border-radius: 8px;
+            padding: 20px;
+            margin: 24px 0;
+        }
+        
+        .example-title {
+            font-weight: 600;
+            color: var(--primary);
+            margin-bottom: 12px;
+        }
+        
+        .diagram {
+            background: var(--bg-card);
+            border: 1px solid var(--border);
+            border-radius: 12px;
+            padding: 32px;
+            margin: 32px 0;
+            font-family: monospace;
+            overflow-x: auto;
+        }
+        
+        @media (max-width: 768px) {
+            h1 {
+                font-size: 32px;
+            }
+            
+            h2 {
+                font-size: 24px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <a href="index.html" class="nav-back">← Back to Docs</a>
+        
+        <div class="header">
+            <div class="icon">🤝</div>
+            <h1>Referral System</h1>
+            <p class="subtitle">Earn 20% commission across 7 levels on every deposit</p>
+        </div>
+        
+        <h2>🎯 Overview</h2>
+        <p>NOX FUND features a powerful <strong>7-level referral system</strong> that rewards you for building and growing your network. Every time someone in your downline makes a deposit, you earn instant commissions—up to 7 levels deep.</p>
+        
+        <div class="highlight-box">
+            <strong>💰 Total Commission Rate: 20%</strong><br>
+            Distributed across 7 levels, paid instantly on every deposit in USDT.
+        </div>
+        
+        <h2>📊 Commission Structure</h2>
+        
+        <div class="level-card">
+            <div class="level-header">
+                <div class="level-number">Level 1 (Direct)</div>
+                <div class="level-commission">8.0%</div>
+            </div>
+            <p>Your direct referrals. These are people who sign up using your referral link.</p>
+            <p><strong>Example:</strong> Friend deposits 1,000 USDT → You earn <strong>80 USDT</strong></p>
+        </div>
+        
+        <div class="level-card">
+            <div class="level-header">
+                <div class="level-number">Level 2</div>
+                <div class="level-commission">4.0%</div>
+            </div>
+            <p>Referrals of your direct referrals.</p>
+            <p><strong>Example:</strong> Level 2 deposits 1,000 USDT → You earn <strong>40 USDT</strong></p>
+        </div>
+        
+        <div class="level-card">
+            <div class="level-header">
+                <div class="level-number">Level 3</div>
+                <div class="level-commission">3.0%</div>
+            </div>
+            <p>Third level in your organization.</p>
+            <p><strong>Example:</strong> Level 3 deposits 1,000 USDT → You earn <strong>30 USDT</strong></p>
+        </div>
+        
+        <div class="level-card">
+            <div class="level-header">
+                <div class="level-number">Level 4</div>
+                <div class="level-commission">2.0%</div>
+            </div>
+            <p>Fourth level depth.</p>
+            <p><strong>Example:</strong> Level 4 deposits 1,000 USDT → You earn <strong>20 USDT</strong></p>
+        </div>
+        
+        <div class="level-card">
+            <div class="level-header">
+                <div class="level-number">Level 5</div>
+                <div class="level-commission">1.5%</div>
+            </div>
+            <p>Fifth level depth.</p>
+            <p><strong>Example:</strong> Level 5 deposits 1,000 USDT → You earn <strong>15 USDT</strong></p>
+        </div>
+        
+        <div class="level-card">
+            <div class="level-header">
+                <div class="level-number">Level 6</div>
+                <div class="level-commission">1.0%</div>
+            </div>
+            <p>Sixth level depth.</p>
+            <p><strong>Example:</strong> Level 6 deposits 1,000 USDT → You earn <strong>10 USDT</strong></p>
+        </div>
+        
+        <div class="level-card">
+            <div class="level-header">
+                <div class="level-number">Level 7</div>
+                <div class="level-commission">0.5%</div>
+            </div>
+            <p>Maximum depth—seventh level.</p>
+            <p><strong>Example:</strong> Level 7 deposits 1,000 USDT → You earn <strong>5 USDT</strong></p>
+        </div>
+        
+        <h2>🌲 Referral Tree Structure</h2>
+        
+        <div class="diagram">
+<pre>
+                    YOU (Level 0)
+                        │
+        ┌───────────────┼───────────────┐
+        │               │               │
+    Referral A      Referral B      Referral C    ← Level 1: 8%
+        │               │
+    ┌───┴───┐       ┌───┴───┐
+    D       E       F       G                     ← Level 2: 4%
+    │               │
+  ┌─┴─┐           ┌─┴─┐
+  H   I           J   K                           ← Level 3: 3%
+  │               │
+  L               M                               ← Level 4: 2%
+  │               │
+  N               O                               ← Level 5: 1.5%
+  │               │
+  P               Q                               ← Level 6: 1%
+  │               │
+  R               S                               ← Level 7: 0.5%
+</pre>
+        </div>
+        
+        <h2>💡 Earnings Examples</h2>
+        
+        <h3>Example 1: Small Team</h3>
+        <div class="example-box">
+            <div class="example-title">Scenario: 3 direct referrals, each deposits 1,000 USDT</div>
+            <table>
+                <tr>
+                    <td>Level 1 (3 people)</td>
+                    <td>3 × 1,000 × 8%</td>
+                    <td><strong>= 240 USDT</strong></td>
+                </tr>
+                <tr style="border-top: 2px solid var(--primary);">
+                    <td colspan="2"><strong>Total Commission:</strong></td>
+                    <td><strong>240 USDT</strong></td>
+                </tr>
+            </table>
+        </div>
+        
+        <h3>Example 2: Medium Team</h3>
+        <div class="example-box">
+            <div class="example-title">Scenario: 5 direct referrals, each brings 3 more (total 20 people)</div>
+            <table>
+                <tr>
+                    <td>Level 1 (5 people)</td>
+                    <td>5 × 1,000 × 8%</td>
+                    <td><strong>= 400 USDT</strong></td>
+                </tr>
+                <tr>
+                    <td>Level 2 (15 people)</td>
+                    <td>15 × 1,000 × 4%</td>
+                    <td><strong>= 600 USDT</strong></td>
+                </tr>
+                <tr style="border-top: 2px solid var(--primary);">
+                    <td colspan="2"><strong>Total Commission:</strong></td>
+                    <td><strong>1,000 USDT</strong></td>
+                </tr>
+            </table>
+        </div>
+        
+        <h3>Example 3: Large Organization</h3>
+        <div class="example-box">
+            <div class="example-title">Scenario: Full 7-level structure with 100 total members (avg. 1,000 USDT deposits)</div>
+            <table>
+                <tr>
+                    <td>Level 1 (10 people)</td>
+                    <td>10,000 × 8%</td>
+                    <td><strong>= 800 USDT</strong></td>
+                </tr>
+                <tr>
+                    <td>Level 2 (20 people)</td>
+                    <td>20,000 × 4%</td>
+                    <td><strong>= 800 USDT</strong></td>
+                </tr>
+                <tr>
+                    <td>Level 3 (25 people)</td>
+                    <td>25,000 × 3%</td>
+                    <td><strong>= 750 USDT</strong></td>
+                </tr>
+                <tr>
+                    <td>Level 4 (20 people)</td>
+                    <td>20,000 × 2%</td>
+                    <td><strong>= 400 USDT</strong></td>
+                </tr>
+                <tr>
+                    <td>Level 5 (15 people)</td>
+                    <td>15,000 × 1.5%</td>
+                    <td><strong>= 225 USDT</strong></td>
+                </tr>
+                <tr>
+                    <td>Level 6 (7 people)</td>
+                    <td>7,000 × 1%</td>
+                    <td><strong>= 70 USDT</strong></td>
+                </tr>
+                <tr>
+                    <td>Level 7 (3 people)</td>
+                    <td>3,000 × 0.5%</td>
+                    <td><strong>= 15 USDT</strong></td>
+                </tr>
+                <tr style="border-top: 2px solid var(--primary);">
+                    <td colspan="2"><strong>Total Commission:</strong></td>
+                    <td><strong>3,060 USDT</strong></td>
+                </tr>
+            </table>
+            <p style="margin-top: 16px; color: var(--success);"><strong>And this is just from ONE deposit round!</strong> Every redeposit earns you more commissions.</p>
+        </div>
+        
+        <h2>🎯 How to Maximize Referral Earnings</h2>
+        
+        <h3>1. Get Your Referral Link</h3>
+        <ol>
+            <li>Make your first deposit to become an active participant</li>
+            <li>Claim a vanity username (optional but recommended)</li>
+            <li>Share your link: <code>nox.fund/?ref=yourusername</code></li>
+        </ol>
+        
+        <h3>2. Share Strategically</h3>
+        <ul>
+            <li><strong>Social Media:</strong> Twitter, Facebook, Instagram, TikTok</li>
+            <li><strong>Messaging Apps:</strong> Telegram, WhatsApp, Discord</li>
+            <li><strong>Content Creation:</strong> YouTube videos, blog posts, tutorials</li>
+            <li><strong>Direct Outreach:</strong> One-on-one conversations with interested people</li>
+        </ul>
+        
+        <h3>3. Educate Your Team</h3>
+        <ul>
+            <li>Help new members understand the platform</li>
+            <li>Share this documentation</li>
+            <li>Teach compounding strategies</li>
+            <li>Show them how to build their own teams</li>
+        </ul>
+        
+        <h3>4. Lead by Example</h3>
+        <ul>
+            <li>Consistently compound your own earnings</li>
+            <li>Share your results (screenshots with proof)</li>
+            <li>Be transparent about the risks and rewards</li>
+            <li>Build trust through honesty</li>
+        </ul>
+        
+        <h2>🔐 Referral Lock System</h2>
+        
+        <div class="highlight-box">
+            <strong>⚠️ Important:</strong> Once a user makes their first deposit with a referrer, that relationship is <strong>permanently locked</strong>. This means:
+            <ul style="margin: 12px 0 0 20px;">
+                <li>The referrer cannot be changed</li>
+                <li>All future deposits from that user count toward the same upline</li>
+                <li>Prevents referral hijacking and manipulation</li>
+                <li>Ensures stable team structures</li>
+            </ul>
+        </div>
+        
+        <h2>💰 Withdrawing Referral Earnings</h2>
+        
+        <p>Referral commissions are paid <strong>instantly</strong> when someone in your downline makes a deposit. However, they accumulate in your referral balance until you withdraw them.</p>
+        
+        <h3>To Withdraw:</h3>
+        <ol>
+            <li>Go to the NOX FUND app dashboard</li>
+            <li>Check your "Referral Balance"</li>
+            <li>Click "Withdraw Referral Earnings"</li>
+            <li>Confirm the transaction in your wallet</li>
+            <li>Receive USDT instantly</li>
+        </ol>
+        
+        <div class="highlight-box success-box">
+            <strong>💡 Pro Tip:</strong> You can either withdraw referral earnings for immediate income, or reinvest them as new deposits to compound your returns! Many successful users treat referral earnings as "bonus capital" for reinvestment.
+        </div>
+        
+        <h2>📈 Growth Strategies</h2>
+        
+        <h3>Strategy 1: Wide Approach</h3>
+        <p>Focus on recruiting many direct referrals (Level 1). Even if they don't build teams, you earn 8% on all their deposits.</p>
+        
+        <h3>Strategy 2: Deep Approach</h3>
+        <p>Work closely with a few strong referrals and help them build their own teams. This creates depth and leverages all 7 levels.</p>
+        
+        <h3>Strategy 3: Hybrid Approach</h3>
+        <p>Recruit broadly but identify "leaders" in your organization and give them extra support to build their teams.</p>
+        
+        <h2>🚀 Quick Start Checklist</h2>
+        
+        <div class="highlight-box">
+            <ol style="margin: 0;">
+                <li>Make your first deposit (minimum 1 USDT)</li>
+                <li>Claim your vanity username</li>
+                <li>Get your referral link</li>
+                <li>Create educational content about NOX FUND</li>
+                <li>Share on social media and messaging platforms</li>
+                <li>Help your first referrals get started</li>
+                <li>Teach them to build their own teams</li>
+                <li>Monitor your dashboard and celebrate wins</li>
+            </ol>
+        </div>
+        
+        <h2>❓ Common Questions</h2>
+        
+        <h3>Do I need to recruit to earn?</h3>
+        <p>No! You earn 1.5% daily on your own deposits regardless of referrals. The referral system is an <strong>optional</strong> way to earn additional income.</p>
+        
+        <h3>What if I don't have a referrer?</h3>
+        <p>You can still join and earn 1.5% daily without a referrer. However, you won't help anyone earn commissions from your deposits.</p>
+        
+        <h3>Can I change my referrer?</h3>
+        <p>No. Once locked after your first deposit, the referrer relationship is permanent.</p>
+        
+        <h3>How quickly are commissions paid?</h3>
+        <p>Instantly! The moment someone in your downline makes a deposit, your commission is added to your referral balance.</p>
+        
+        <h3>Is there a limit to referral earnings?</h3>
+        <p>No limit! You can earn unlimited commissions from your network.</p>
+        
+        <div class="highlight-box" style="margin-top: 48px;">
+            <strong>🎯 Ready to build your team?</strong><br>
+            <a href="../" style="color: var(--primary);">Launch App →</a> | 
+            <a href="team-building.html" style="color: var(--primary);">Read Team Building Guide →</a>
+        </div>
+    </div>
+</body>
+</html>

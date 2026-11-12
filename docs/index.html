@@ -1,0 +1,405 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="nox">
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
+    <title>Documentation Hub | NOX FUND - Learn, Grow, Earn</title>
+    
+    <meta name="description" content="Complete NOX FUND documentation: whitepaper, guides, strategies for earning 1.5% daily returns, building teams, and growing your passive income on BNB Chain." />
+    <meta name="keywords" content="NOX FUND docs, DeFi guide, passive income strategy, referral system, compounding calculator, team building, crypto education" />
+    
+    <!-- Open Graph -->
+    <meta property="og:type" content="website" />
+    <meta property="og:title" content="NOX FUND Documentation Hub" />
+    <meta property="og:description" content="Everything you need to succeed with NOX FUND. Learn strategies, understand the protocol, and maximize your earnings." />
+    <meta property="og:image" content="https://nox.fund/assets/img/og.png" />
+    
+    <link rel="icon" href="../assets/img/favicon.svg" type="image/svg+xml" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=Inter:wght@400;500;600&display=swap" rel="stylesheet" />
+    
+    <style>
+        :root {
+            --primary: #667eea;
+            --primary-dark: #764ba2;
+            --bg-dark: #07030f;
+            --bg-card: #1a0a2e;
+            --text: #ffffff;
+            --text-muted: #a0a0a0;
+            --border: #2d1b4e;
+            --success: #10b981;
+            --warning: #f59e0b;
+        }
+        
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+            background: linear-gradient(135deg, var(--bg-dark) 0%, #1a0a2e 100%);
+            color: var(--text);
+            line-height: 1.6;
+            min-height: 100vh;
+        }
+        
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+        
+        header {
+            text-align: center;
+            padding: 60px 20px 40px;
+            border-bottom: 1px solid var(--border);
+        }
+        
+        .logo {
+            font-family: 'Space Grotesk', sans-serif;
+            font-size: 48px;
+            font-weight: 700;
+            background: linear-gradient(135deg, var(--primary) 0%, var(--primary-dark) 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+            margin-bottom: 16px;
+        }
+        
+        .tagline {
+            font-size: 20px;
+            color: var(--text-muted);
+            margin-bottom: 32px;
+        }
+        
+        .nav-pills {
+            display: flex;
+            gap: 12px;
+            justify-content: center;
+            flex-wrap: wrap;
+            margin-top: 24px;
+        }
+        
+        .nav-pill {
+            padding: 8px 20px;
+            background: rgba(102, 126, 234, 0.1);
+            border: 1px solid var(--border);
+            border-radius: 24px;
+            color: var(--text);
+            text-decoration: none;
+            font-size: 14px;
+            font-weight: 500;
+            transition: all 0.3s;
+        }
+        
+        .nav-pill:hover {
+            background: rgba(102, 126, 234, 0.2);
+            border-color: var(--primary);
+            transform: translateY(-2px);
+        }
+        
+        .docs-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+            gap: 24px;
+            margin-top: 48px;
+        }
+        
+        .doc-card {
+            background: var(--bg-card);
+            border: 1px solid var(--border);
+            border-radius: 16px;
+            padding: 32px;
+            transition: all 0.3s;
+            text-decoration: none;
+            display: block;
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .doc-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            height: 4px;
+            background: linear-gradient(90deg, var(--primary), var(--primary-dark));
+            transform: scaleX(0);
+            transition: transform 0.3s;
+        }
+        
+        .doc-card:hover {
+            border-color: var(--primary);
+            transform: translateY(-4px);
+            box-shadow: 0 8px 32px rgba(102, 126, 234, 0.2);
+        }
+        
+        .doc-card:hover::before {
+            transform: scaleX(1);
+        }
+        
+        .card-icon {
+            font-size: 48px;
+            margin-bottom: 16px;
+            display: block;
+        }
+        
+        .card-title {
+            font-family: 'Space Grotesk', sans-serif;
+            font-size: 24px;
+            font-weight: 700;
+            color: var(--text);
+            margin-bottom: 12px;
+        }
+        
+        .card-desc {
+            color: var(--text-muted);
+            font-size: 15px;
+            line-height: 1.6;
+            margin-bottom: 20px;
+        }
+        
+        .card-tags {
+            display: flex;
+            gap: 8px;
+            flex-wrap: wrap;
+        }
+        
+        .tag {
+            padding: 4px 12px;
+            background: rgba(102, 126, 234, 0.15);
+            border-radius: 12px;
+            font-size: 12px;
+            color: var(--primary);
+            font-weight: 500;
+        }
+        
+        .cta-section {
+            text-align: center;
+            margin-top: 80px;
+            padding: 48px 32px;
+            background: linear-gradient(135deg, rgba(102, 126, 234, 0.1) 0%, rgba(118, 75, 162, 0.1) 100%);
+            border-radius: 24px;
+            border: 1px solid var(--border);
+        }
+        
+        .cta-title {
+            font-family: 'Space Grotesk', sans-serif;
+            font-size: 32px;
+            font-weight: 700;
+            margin-bottom: 16px;
+        }
+        
+        .cta-text {
+            font-size: 18px;
+            color: var(--text-muted);
+            margin-bottom: 32px;
+        }
+        
+        .btn {
+            display: inline-block;
+            padding: 14px 32px;
+            background: linear-gradient(135deg, var(--primary) 0%, var(--primary-dark) 100%);
+            color: var(--text);
+            text-decoration: none;
+            border-radius: 8px;
+            font-weight: 600;
+            font-size: 16px;
+            transition: transform 0.2s, box-shadow 0.2s;
+            box-shadow: 0 4px 20px rgba(102, 126, 234, 0.4);
+            margin: 0 8px;
+        }
+        
+        .btn:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 6px 30px rgba(102, 126, 234, 0.6);
+        }
+        
+        .btn-outline {
+            background: transparent;
+            border: 2px solid var(--primary);
+            box-shadow: none;
+        }
+        
+        footer {
+            text-align: center;
+            padding: 48px 20px;
+            margin-top: 80px;
+            border-top: 1px solid var(--border);
+            color: var(--text-muted);
+            font-size: 14px;
+        }
+        
+        @media (max-width: 768px) {
+            .logo {
+                font-size: 36px;
+            }
+            
+            .tagline {
+                font-size: 16px;
+            }
+            
+            .docs-grid {
+                grid-template-columns: 1fr;
+            }
+            
+            .cta-title {
+                font-size: 24px;
+            }
+            
+            .btn {
+                display: block;
+                margin: 8px 0;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <header>
+            <div class="logo">📚 NOX FUND DOCS</div>
+            <p class="tagline">Everything you need to succeed with NOX FUND</p>
+            
+            <div class="nav-pills">
+                <a href="../" class="nav-pill">🏠 Home</a>
+                <a href="https://t.me/noxfundchat" class="nav-pill" target="_blank">💬 Community</a>
+                <a href="https://bscscan.com/address/0x433830E36585bdACC840E1caB419C4211bBf13f5" class="nav-pill" target="_blank">📊 Contract</a>
+            </div>
+        </header>
+        
+        <main>
+            <div class="docs-grid">
+                <!-- Whitepaper -->
+                <a href="whitepaper.html" class="doc-card">
+                    <span class="card-icon">📄</span>
+                    <h2 class="card-title">Whitepaper</h2>
+                    <p class="card-desc">Technical documentation covering the protocol architecture, smart contract design, security model, and economic mechanisms.</p>
+                    <div class="card-tags">
+                        <span class="tag">Technical</span>
+                        <span class="tag">Security</span>
+                        <span class="tag">Economics</span>
+                    </div>
+                </a>
+                
+                <!-- Referral System -->
+                <a href="referral-system.html" class="doc-card">
+                    <span class="card-icon">🤝</span>
+                    <h2 class="card-title">Referral System</h2>
+                    <p class="card-desc">Master the 7-level referral system. Learn how to earn 20% commissions on deposits and build a sustainable passive income stream.</p>
+                    <div class="card-tags">
+                        <span class="tag">Income</span>
+                        <span class="tag">Strategy</span>
+                        <span class="tag">Network</span>
+                    </div>
+                </a>
+                
+                <!-- Compounding Guide -->
+                <a href="compounding-guide.html" class="doc-card">
+                    <span class="card-icon">📈</span>
+                    <h2 class="card-title">Compounding Strategy</h2>
+                    <p class="card-desc">Maximize your returns with proven compounding strategies. Detailed examples, calculators, and optimal reinvestment schedules.</p>
+                    <div class="card-tags">
+                        <span class="tag">ROI</span>
+                        <span class="tag">Strategy</span>
+                        <span class="tag">Calculator</span>
+                    </div>
+                </a>
+                
+                <!-- Team Building -->
+                <a href="team-building.html" class="doc-card">
+                    <span class="card-icon">👥</span>
+                    <h2 class="card-title">Team Building</h2>
+                    <p class="card-desc">Build and scale your NOX FUND team. Proven strategies for recruitment, training, and creating a thriving organization.</p>
+                    <div class="card-tags">
+                        <span class="tag">Leadership</span>
+                        <span class="tag">Growth</span>
+                        <span class="tag">Training</span>
+                    </div>
+                </a>
+                
+                <!-- Community Growth -->
+                <a href="community-growth.html" class="doc-card">
+                    <span class="card-icon">🌱</span>
+                    <h2 class="card-title">Community Growth</h2>
+                    <p class="card-desc">Strategies for growing an engaged community. Content creation, social media tactics, and community management best practices.</p>
+                    <div class="card-tags">
+                        <span class="tag">Marketing</span>
+                        <span class="tag">Social</span>
+                        <span class="tag">Engagement</span>
+                    </div>
+                </a>
+                
+                <!-- FAQ -->
+                <a href="faq.html" class="doc-card">
+                    <span class="card-icon">❓</span>
+                    <h2 class="card-title">FAQ & Troubleshooting</h2>
+                    <p class="card-desc">Common questions answered. Technical support, wallet connection issues, transaction problems, and withdrawal guides.</p>
+                    <div class="card-tags">
+                        <span class="tag">Support</span>
+                        <span class="tag">Help</span>
+                        <span class="tag">Quick Start</span>
+                    </div>
+                </a>
+                
+                <!-- Getting Started -->
+                <a href="getting-started.html" class="doc-card">
+                    <span class="card-icon">🚀</span>
+                    <h2 class="card-title">Getting Started</h2>
+                    <p class="card-desc">Complete beginner's guide. Set up your wallet, make your first deposit, claim rewards, and understand the basics.</p>
+                    <div class="card-tags">
+                        <span class="tag">Beginner</span>
+                        <span class="tag">Tutorial</span>
+                        <span class="tag">Setup</span>
+                    </div>
+                </a>
+                
+                <!-- Security Guide -->
+                <a href="security.html" class="doc-card">
+                    <span class="card-icon">🔒</span>
+                    <h2 class="card-title">Security Best Practices</h2>
+                    <p class="card-desc">Protect your funds and stay safe in DeFi. Wallet security, phishing prevention, and safe transaction practices.</p>
+                    <div class="card-tags">
+                        <span class="tag">Safety</span>
+                        <span class="tag">Security</span>
+                        <span class="tag">Protection</span>
+                    </div>
+                </a>
+                
+                <!-- ROI Calculator -->
+                <a href="calculator.html" class="doc-card">
+                    <span class="card-icon">🧮</span>
+                    <h2 class="card-title">ROI Calculator</h2>
+                    <p class="card-desc">Interactive calculator to project your earnings. Compare simple vs. compound strategies, plan your investments effectively.</p>
+                    <div class="card-tags">
+                        <span class="tag">Tool</span>
+                        <span class="tag">Planning</span>
+                        <span class="tag">Analysis</span>
+                    </div>
+                </a>
+            </div>
+            
+            <section class="cta-section">
+                <h2 class="cta-title">Ready to Start Earning?</h2>
+                <p class="cta-text">Join thousands earning 1.5% daily returns on BNB Chain</p>
+                <div>
+                    <a href="../" class="btn">Launch App</a>
+                    <a href="whitepaper.html" class="btn btn-outline">Read Whitepaper</a>
+                </div>
+            </section>
+        </main>
+        
+        <footer>
+            <p>&copy; 2026 NOX FUND Protocol. Open source, ownerless, and immutable.</p>
+            <p style="margin-top: 8px;">
+                <a href="https://github.com/noxfund" style="color: var(--primary); text-decoration: none;">GitHub</a> · 
+                <a href="https://t.me/noxfundchat" style="color: var(--primary); text-decoration: none;">Telegram</a> · 
+                <a href="https://hazecrypto.net/audit/Noxfund" style="color: var(--primary); text-decoration: none;">Audit</a>
+            </p>
+        </footer>
+    </div>
+</body>
+</html>

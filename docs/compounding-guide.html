@@ -1,0 +1,658 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="nox">
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
+    <title>Compounding Strategy Guide | NOX FUND - Maximize Your Returns</title>
+    
+    <meta name="description" content="Master compounding strategies with NOX FUND. Learn how to reinvest daily ROI for exponential growth and maximum returns on your USDT deposits." />
+    <meta name="keywords" content="compound interest, ROI calculator, passive income strategy, reinvestment, DeFi compounding, USDT yield" />
+    
+    <link rel="icon" href="../assets/img/favicon.svg" type="image/svg+xml" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=Inter:wght@400;500;600&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet" />
+    
+    <style>
+        :root {
+            --primary: #667eea;
+            --primary-dark: #764ba2;
+            --bg-dark: #07030f;
+            --bg-card: #1a0a2e;
+            --text: #ffffff;
+            --text-muted: #a0a0a0;
+            --border: #2d1b4e;
+            --success: #10b981;
+            --warning: #f59e0b;
+        }
+        
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+            background: linear-gradient(135deg, var(--bg-dark) 0%, #1a0a2e 100%);
+            color: var(--text);
+            line-height: 1.7;
+        }
+        
+        .container {
+            max-width: 900px;
+            margin: 0 auto;
+            padding: 40px 20px 80px;
+        }
+        
+        .nav-back {
+            display: inline-block;
+            margin-bottom: 24px;
+            padding: 8px 16px;
+            background: rgba(102, 126, 234, 0.1);
+            border: 1px solid var(--border);
+            border-radius: 8px;
+            color: var(--text);
+            text-decoration: none;
+            font-size: 14px;
+            transition: all 0.3s;
+        }
+        
+        .nav-back:hover {
+            background: rgba(102, 126, 234, 0.2);
+            border-color: var(--primary);
+        }
+        
+        .header {
+            text-align: center;
+            margin-bottom: 48px;
+        }
+        
+        .icon {
+            font-size: 64px;
+            margin-bottom: 16px;
+        }
+        
+        h1 {
+            font-family: 'Space Grotesk', sans-serif;
+            font-size: 42px;
+            font-weight: 700;
+            margin-bottom: 16px;
+            background: linear-gradient(135deg, var(--primary) 0%, var(--primary-dark) 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+        
+        .subtitle {
+            font-size: 18px;
+            color: var(--text-muted);
+        }
+        
+        h2 {
+            font-family: 'Space Grotesk', sans-serif;
+            font-size: 28px;
+            font-weight: 700;
+            margin: 48px 0 24px;
+            padding-bottom: 12px;
+            border-bottom: 2px solid var(--border);
+        }
+        
+        h3 {
+            font-family: 'Space Grotesk', sans-serif;
+            font-size: 22px;
+            font-weight: 600;
+            margin: 32px 0 16px;
+        }
+        
+        p {
+            margin-bottom: 16px;
+            font-size: 16px;
+        }
+        
+        ul, ol {
+            margin: 16px 0 16px 24px;
+        }
+        
+        li {
+            margin-bottom: 8px;
+        }
+        
+        .highlight-box {
+            background: linear-gradient(135deg, rgba(102, 126, 234, 0.1) 0%, rgba(118, 75, 162, 0.1) 100%);
+            border: 1px solid var(--border);
+            border-left: 4px solid var(--primary);
+            padding: 24px;
+            border-radius: 8px;
+            margin: 24px 0;
+        }
+        
+        .success-box {
+            background: rgba(16, 185, 129, 0.1);
+            border-left-color: var(--success);
+        }
+        
+        .warning-box {
+            background: rgba(245, 158, 11, 0.1);
+            border-left-color: var(--warning);
+        }
+        
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin: 24px 0;
+            background: var(--bg-card);
+            border-radius: 8px;
+            overflow: hidden;
+            font-size: 14px;
+        }
+        
+        thead {
+            background: rgba(102, 126, 234, 0.1);
+        }
+        
+        th, td {
+            padding: 12px 16px;
+            text-align: left;
+            border-bottom: 1px solid var(--border);
+        }
+        
+        th {
+            font-weight: 600;
+            color: var(--primary);
+        }
+        
+        .comparison-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 24px;
+            margin: 32px 0;
+        }
+        
+        .strategy-card {
+            background: var(--bg-card);
+            border: 1px solid var(--border);
+            border-radius: 12px;
+            padding: 24px;
+        }
+        
+        .strategy-card h4 {
+            font-size: 20px;
+            margin-bottom: 16px;
+            color: var(--primary);
+        }
+        
+        .big-number {
+            font-family: 'Space Grotesk', sans-serif;
+            font-size: 36px;
+            font-weight: 700;
+            color: var(--success);
+            margin: 16px 0;
+        }
+        
+        .calculator {
+            background: var(--bg-card);
+            border: 2px solid var(--border);
+            border-radius: 16px;
+            padding: 32px;
+            margin: 32px 0;
+        }
+        
+        .calculator-title {
+            font-family: 'Space Grotesk', sans-serif;
+            font-size: 24px;
+            font-weight: 700;
+            margin-bottom: 24px;
+            text-align: center;
+        }
+        
+        .input-group {
+            margin-bottom: 20px;
+        }
+        
+        .input-label {
+            display: block;
+            margin-bottom: 8px;
+            font-weight: 500;
+        }
+        
+        input[type="number"] {
+            width: 100%;
+            padding: 12px 16px;
+            background: var(--bg-dark);
+            border: 1px solid var(--border);
+            border-radius: 8px;
+            color: var(--text);
+            font-size: 16px;
+            font-family: 'JetBrains Mono', monospace;
+        }
+        
+        input[type="number"]:focus {
+            outline: none;
+            border-color: var(--primary);
+        }
+        
+        .btn {
+            width: 100%;
+            padding: 14px;
+            background: linear-gradient(135deg, var(--primary) 0%, var(--primary-dark) 100%);
+            color: var(--text);
+            border: none;
+            border-radius: 8px;
+            font-size: 16px;
+            font-weight: 600;
+            cursor: pointer;
+            transition: transform 0.2s;
+        }
+        
+        .btn:hover {
+            transform: translateY(-2px);
+        }
+        
+        .results {
+            margin-top: 24px;
+            padding-top: 24px;
+            border-top: 1px solid var(--border);
+        }
+        
+        .result-row {
+            display: flex;
+            justify-content: space-between;
+            padding: 12px 0;
+            border-bottom: 1px solid var(--border);
+        }
+        
+        .result-row:last-child {
+            border-bottom: none;
+            padding-top: 20px;
+            margin-top: 12px;
+            border-top: 2px solid var(--primary);
+        }
+        
+        .result-value {
+            font-family: 'JetBrains Mono', monospace;
+            font-weight: 600;
+            color: var(--success);
+        }
+        
+        @media (max-width: 768px) {
+            h1 {
+                font-size: 32px;
+            }
+            
+            h2 {
+                font-size: 24px;
+            }
+            
+            .comparison-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <a href="index.html" class="nav-back">← Back to Docs</a>
+        
+        <div class="header">
+            <div class="icon">📈</div>
+            <h1>Compounding Strategy</h1>
+            <p class="subtitle">Turn 1.5% daily into exponential growth through strategic reinvestment</p>
+        </div>
+        
+        <h2>💡 Understanding Compounding</h2>
+        <p><strong>Compounding</strong> is the process of reinvesting your earnings to generate additional returns. With NOX FUND's 1.5% daily ROI, compounding can dramatically accelerate your wealth accumulation.</p>
+        
+        <div class="highlight-box">
+            <strong>The Power of Compounding:</strong><br>
+            Albert Einstein allegedly called compound interest "the eighth wonder of the world." With NOX FUND's high daily rate and flexible reinvestment options, you can harness this power to grow your capital exponentially.
+        </div>
+        
+        <h2>📊 Simple vs. Compound Returns</h2>
+        
+        <div class="comparison-grid">
+            <div class="strategy-card">
+                <h4>🔵 Simple (No Compounding)</h4>
+                <p>Withdraw all ROI daily, never reinvest</p>
+                <p><strong>Initial:</strong> 1,000 USDT</p>
+                <p><strong>Daily Earnings:</strong> 15 USDT</p>
+                <p><strong>After 30 days:</strong></p>
+                <div class="big-number">1,450 USDT</div>
+                <p style="font-size: 14px; color: var(--text-muted);">(1,000 principal + 450 earnings)</p>
+            </div>
+            
+            <div class="strategy-card">
+                <h4>🟢 Compound (Daily Reinvestment)</h4>
+                <p>Reinvest all ROI daily for 30 days</p>
+                <p><strong>Initial:</strong> 1,000 USDT</p>
+                <p><strong>Daily Earnings:</strong> Growing</p>
+                <p><strong>After 30 days:</strong></p>
+                <div class="big-number">1,568 USDT</div>
+                <p style="font-size: 14px; color: var(--text-muted);">(+118 USDT more than simple!)</p>
+            </div>
+        </div>
+        
+        <h2>🎯 Compounding Strategies</h2>
+        
+        <h3>Strategy 1: Daily Compound (Aggressive)</h3>
+        <p><strong>Method:</strong> Reinvest 100% of daily ROI every single day</p>
+        
+        <table>
+            <thead>
+                <tr>
+                    <th>Day</th>
+                    <th>Principal</th>
+                    <th>Daily ROI (1.5%)</th>
+                    <th>New Principal</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>1</td>
+                    <td>1,000 USDT</td>
+                    <td>15.00 USDT</td>
+                    <td>1,015 USDT</td>
+                </tr>
+                <tr>
+                    <td>2</td>
+                    <td>1,015 USDT</td>
+                    <td>15.23 USDT</td>
+                    <td>1,030.23 USDT</td>
+                </tr>
+                <tr>
+                    <td>3</td>
+                    <td>1,030.23 USDT</td>
+                    <td>15.45 USDT</td>
+                    <td>1,045.68 USDT</td>
+                </tr>
+                <tr>
+                    <td>...</td>
+                    <td>...</td>
+                    <td>...</td>
+                    <td>...</td>
+                </tr>
+                <tr style="background: rgba(102, 126, 234, 0.1);">
+                    <td><strong>30</strong></td>
+                    <td><strong>1,568 USDT</strong></td>
+                    <td><strong>23.52 USDT</strong></td>
+                    <td><strong>1,591.52 USDT</strong></td>
+                </tr>
+            </tbody>
+        </table>
+        
+        <div class="highlight-box success-box">
+            <strong>✅ Best For:</strong> Long-term investors who want maximum growth and don't need immediate income.
+        </div>
+        
+        <h3>Strategy 2: Partial Compound (Balanced)</h3>
+        <p><strong>Method:</strong> Withdraw 50% for income, reinvest 50% for growth</p>
+        
+        <ul>
+            <li><strong>Immediate Income:</strong> Get daily cash flow for expenses</li>
+            <li><strong>Growth:</strong> Still compound principal over time</li>
+            <li><strong>Balance:</strong> Best of both worlds</li>
+        </ul>
+        
+        <p><strong>Example:</strong> Starting with 1,000 USDT</p>
+        <ul>
+            <li>Day 1: Earn 15 USDT → Withdraw 7.50, Reinvest 7.50</li>
+            <li>Day 2: Earn 15.11 USDT → Withdraw 7.56, Reinvest 7.56</li>
+            <li>After 30 days: ~1,285 USDT principal + 225 USDT withdrawn</li>
+        </ul>
+        
+        <div class="highlight-box success-box">
+            <strong>✅ Best For:</strong> Those who need some income now but still want portfolio growth.
+        </div>
+        
+        <h3>Strategy 3: Weekly Compound (Conservative)</h3>
+        <p><strong>Method:</strong> Withdraw daily, compound weekly</p>
+        
+        <ul>
+            <li>Claim ROI daily for liquidity</li>
+            <li>Every 7 days, deposit accumulated ROI as new principal</li>
+            <li>Creates regular income + strategic growth</li>
+        </ul>
+        
+        <p><strong>Example Timeline:</strong></p>
+        <table>
+            <thead>
+                <tr>
+                    <th>Week</th>
+                    <th>Weekly Earnings</th>
+                    <th>Reinvest Amount</th>
+                    <th>New Total</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>1</td>
+                    <td>105 USDT</td>
+                    <td>105 USDT</td>
+                    <td>1,105 USDT</td>
+                </tr>
+                <tr>
+                    <td>2</td>
+                    <td>116 USDT</td>
+                    <td>116 USDT</td>
+                    <td>1,221 USDT</td>
+                </tr>
+                <tr>
+                    <td>3</td>
+                    <td>128 USDT</td>
+                    <td>128 USDT</td>
+                    <td>1,349 USDT</td>
+                </tr>
+                <tr>
+                    <td>4</td>
+                    <td>142 USDT</td>
+                    <td>142 USDT</td>
+                    <td>1,491 USDT</td>
+                </tr>
+            </tbody>
+        </table>
+        
+        <div class="highlight-box success-box">
+            <strong>✅ Best For:</strong> Conservative investors who want flexibility and regular monitoring.
+        </div>
+        
+        <h2>🧮 Interactive ROI Calculator</h2>
+        
+        <div class="calculator">
+            <div class="calculator-title">📊 Compound Interest Calculator</div>
+            
+            <div class="input-group">
+                <label class="input-label">Initial Deposit (USDT)</label>
+                <input type="number" id="initialDeposit" value="1000" min="1" />
+            </div>
+            
+            <div class="input-group">
+                <label class="input-label">Number of Days</label>
+                <input type="number" id="days" value="30" min="1" max="365" />
+            </div>
+            
+            <div class="input-group">
+                <label class="input-label">Reinvestment Rate (%)</label>
+                <input type="number" id="reinvestRate" value="100" min="0" max="100" />
+            </div>
+            
+            <button class="btn" onclick="calculate()">Calculate Returns</button>
+            
+            <div class="results" id="results" style="display: none;">
+                <div class="result-row">
+                    <span>Final Principal:</span>
+                    <span class="result-value" id="finalPrincipal">-</span>
+                </div>
+                <div class="result-row">
+                    <span>Total ROI Earned:</span>
+                    <span class="result-value" id="totalROI">-</span>
+                </div>
+                <div class="result-row">
+                    <span>ROI Withdrawn:</span>
+                    <span class="result-value" id="roiWithdrawn">-</span>
+                </div>
+                <div class="result-row">
+                    <span>ROI Reinvested:</span>
+                    <span class="result-value" id="roiReinvested">-</span>
+                </div>
+                <div class="result-row">
+                    <span><strong>Total Value:</strong></span>
+                    <span class="result-value" id="totalValue" style="font-size: 20px;">-</span>
+                </div>
+            </div>
+        </div>
+        
+        <script>
+        function calculate() {
+            const initial = parseFloat(document.getElementById('initialDeposit').value) || 0;
+            const days = parseInt(document.getElementById('days').value) || 0;
+            const reinvestPercent = parseFloat(document.getElementById('reinvestRate').value) || 0;
+            
+            let principal = initial;
+            let totalROIEarned = 0;
+            let totalWithdrawn = 0;
+            let totalReinvested = 0;
+            
+            for (let day = 1; day <= days; day++) {
+                const dailyROI = principal * 0.015; // 1.5% daily
+                totalROIEarned += dailyROI;
+                
+                const reinvestAmount = dailyROI * (reinvestPercent / 100);
+                const withdrawAmount = dailyROI - reinvestAmount;
+                
+                totalReinvested += reinvestAmount;
+                totalWithdrawn += withdrawAmount;
+                principal += reinvestAmount;
+            }
+            
+            const totalValue = principal + totalWithdrawn;
+            
+            document.getElementById('finalPrincipal').textContent = principal.toFixed(2) + ' USDT';
+            document.getElementById('totalROI').textContent = totalROIEarned.toFixed(2) + ' USDT';
+            document.getElementById('roiWithdrawn').textContent = totalWithdrawn.toFixed(2) + ' USDT';
+            document.getElementById('roiReinvested').textContent = totalReinvested.toFixed(2) + ' USDT';
+            document.getElementById('totalValue').textContent = totalValue.toFixed(2) + ' USDT';
+            
+            document.getElementById('results').style.display = 'block';
+        }
+        </script>
+        
+        <h2>🚀 The 45-Day Rolling Lock Strategy</h2>
+        
+        <p>NOX FUND's <strong>45-day capital lock</strong> creates a powerful compounding opportunity:</p>
+        
+        <h3>How It Works</h3>
+        <ol>
+            <li><strong>Day 1:</strong> Deposit 1,000 USDT (locked for 45 days)</li>
+            <li><strong>Days 1-45:</strong> Earn 1.5% daily = 15 USDT/day</li>
+            <li><strong>Strategy:</strong> Reinvest all daily ROI as NEW deposits</li>
+            <li><strong>Result:</strong> By day 45, you have 45+ separate deposits</li>
+            <li><strong>Day 46+:</strong> Original 1,000 USDT unlocks while newer deposits keep earning</li>
+        </ol>
+        
+        <h3>Example Timeline</h3>
+        <table>
+            <thead>
+                <tr>
+                    <th>Day</th>
+                    <th>Action</th>
+                    <th>Locked Capital</th>
+                    <th>Daily ROI</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>1</td>
+                    <td>Deposit 1,000 USDT</td>
+                    <td>1,000 USDT</td>
+                    <td>15.00 USDT</td>
+                </tr>
+                <tr>
+                    <td>2</td>
+                    <td>Deposit 15 USDT ROI</td>
+                    <td>1,015 USDT</td>
+                    <td>15.23 USDT</td>
+                </tr>
+                <tr>
+                    <td>3</td>
+                    <td>Deposit 15.23 USDT ROI</td>
+                    <td>1,030.23 USDT</td>
+                    <td>15.45 USDT</td>
+                </tr>
+                <tr>
+                    <td>...</td>
+                    <td>Continue daily</td>
+                    <td>Growing daily</td>
+                    <td>Growing daily</td>
+                </tr>
+                <tr style="background: rgba(16, 185, 129, 0.1);">
+                    <td><strong>46</strong></td>
+                    <td><strong>First 1,000 unlocks!</strong></td>
+                    <td><strong>~630 USDT still locked</strong></td>
+                    <td><strong>~24 USDT/day</strong></td>
+                </tr>
+            </tbody>
+        </table>
+        
+        <div class="highlight-box success-box">
+            <strong>💡 Pro Strategy:</strong> After day 45, you can either:
+            <ul style="margin: 12px 0 0 20px;">
+                <li>Withdraw unlocked principals for profit-taking</li>
+                <li>Leave everything locked and keep compounding</li>
+                <li>Reinvest unlocked principals as large new deposits</li>
+            </ul>
+        </div>
+        
+        <h2>📅 Recommended Schedules</h2>
+        
+        <h3>For Maximum Growth (Aggressive)</h3>
+        <ul>
+            <li>Compound 100% daily for first 45 days</li>
+            <li>After day 45, start selective withdrawals</li>
+            <li>Reinvest referral commissions immediately</li>
+        </ul>
+        
+        <h3>For Steady Income (Conservative)</h3>
+        <ul>
+            <li>Withdraw 50-75% of daily ROI</li>
+            <li>Reinvest 25-50% weekly or monthly</li>
+            <li>Use referral earnings as bonus reinvestment capital</li>
+        </ul>
+        
+        <h3>For Balanced Approach (Moderate)</h3>
+        <ul>
+            <li>Weeks 1-4: Compound 100% daily</li>
+            <li>Weeks 5-8: Compound 50%, withdraw 50%</li>
+            <li>After 60 days: Compound 25%, withdraw 75%</li>
+        </ul>
+        
+        <h2>⚠️ Important Considerations</h2>
+        
+        <div class="highlight-box warning-box">
+            <strong>Remember:</strong>
+            <ul style="margin: 12px 0 0 20px;">
+                <li>Principal is locked for 45 days after each deposit</li>
+                <li>Maximum ROI per deposit is 547.5% (365 days)</li>
+                <li>Multiple small deposits give more flexibility than one large deposit</li>
+                <li>Balance growth goals with liquidity needs</li>
+            </ul>
+        </div>
+        
+        <h2>🎯 Next Steps</h2>
+        
+        <ol>
+            <li>Use the calculator above to plan your strategy</li>
+            <li>Start with a comfortable initial amount</li>
+            <li>Choose your compounding frequency</li>
+            <li>Set calendar reminders for deposits</li>
+            <li>Track your progress using the dashboard</li>
+            <li>Adjust strategy based on results and goals</li>
+        </ol>
+        
+        <div class="highlight-box" style="margin-top: 48px;">
+            <strong>🚀 Ready to start compounding?</strong><br>
+            <a href="../" style="color: var(--primary);">Launch App →</a> | 
+            <a href="calculator.html" style="color: var(--primary);">Advanced Calculator →</a>
+        </div>
+    </div>
+</body>
+</html>
