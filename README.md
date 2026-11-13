@@ -26,17 +26,17 @@
 
 | 📖 Guide | Description |
 |----------|-------------|
-| [**📄 Whitepaper**](docs/whitepaper.html) | Technical documentation, architecture, and security |
-| [**🚀 Getting Started**](docs/getting-started.html) | Step-by-step tutorial for beginners |
-| [**🤝 Referral System**](docs/referral-system.html) | Master the 7-level commission structure |
-| [**📈 Compounding Guide**](docs/compounding-guide.html) | Maximize returns with proven strategies |
-| [**👥 Team Building**](docs/team-building.html) | Build and scale your organization |
-| [**🌱 Community Growth**](docs/community-growth.html) | Social media & content strategies |
-| [**❓ FAQ**](docs/faq.html) | Common questions and troubleshooting |
-| [**🔒 Security**](docs/security.html) | Protect your funds and stay safe |
-| [**🧮 ROI Calculator**](docs/calculator.html) | Interactive earnings projections |
+| [**📄 Whitepaper**](https://noxfund.github.io/noxfund/docs/whitepaper.html) | Technical documentation, architecture, and security |
+| [**🚀 Getting Started**](https://noxfund.github.io/noxfund/docs/getting-started.html) | Step-by-step tutorial for beginners |
+| [**🤝 Referral System**](https://noxfund.github.io/noxfund/docs/referral-system.html) | Master the 7-level commission structure |
+| [**📈 Compounding Guide**](https://noxfund.github.io/noxfund/docs/compounding-guide.html) | Maximize returns with proven strategies |
+| [**👥 Team Building**](https://noxfund.github.io/noxfund/docs/team-building.html) | Build and scale your organization |
+| [**🌱 Community Growth**](https://noxfund.github.io/noxfund/docs/community-growth.html) | Social media & content strategies |
+| [**❓ FAQ**](https://noxfund.github.io/noxfund/docs/faq.html) | Common questions and troubleshooting |
+| [**🔒 Security**](https://noxfund.github.io/noxfund/docs/security.html) | Protect your funds and stay safe |
+| [**🧮 ROI Calculator**](https://noxfund.github.io/noxfund/docs/calculator.html) | Interactive earnings projections |
 
-> 🌐 **[Visit Complete Documentation Hub →](docs/index.html)**
+> 🌐 **[Visit Complete Documentation Hub →](https://noxfund.github.io/noxfund/docs/index.html)**
 
 ---
 
